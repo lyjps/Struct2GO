@@ -16,13 +16,17 @@ We put the processed data for train and test on [there]("")
 # Usage
 ## Train the model
 Run the ``run_train.sh`` script directly to train the model(e.g. for MFO)
- >``python run_train.sh`` 
+ ```python
+ python run_train.sh
+ ``` 
 
 Note: Remember to update the file directory in the script to your local directory if you wish to run the MFO model or the other two models.
 
 ## Evaluation the model
 Run the ``run_test.sh`` scirpy directly to evaluation the model(e.g. for MFO)
-``python run_test.sh``
+``` python
+python run_test.sh
+```
 
 Note: Remember to update the file directory in the script to your local directory if you wish to evaluation the MFO model or the other two models.
 
@@ -30,13 +34,19 @@ Note: Remember to update the file directory in the script to your local director
 we provide the proccesed data for training and evaluating directly [there](""), and then we will explain how to process the raw data.
 ### Protein struction data
 - Download protein structure data and convert the three-dimensional atomic structure of proteins into protein contact maps.
-``cd ./data_processing``
-``python predicted_protein_struct2map.py``
+```
+cd ./data_processing
+python predicted_protein_struct2map.py
+```
 - Obtain amino acid residue-level features through the Node2vec algorithm.
-``cd ./angel-master/spark-on-angel/example/local/Node2VecExample.scala``
+```
+cd ./angel-master/spark-on-angel/example/local/Node2VecExample.scala
+```
 (ps:run it by the IntelLLiJ IDEA )
-``cd .data_processing``
-``python sort.py``
+```
+cd .data_processing
+python sort.py
+```
 
 ### Protein sequence data
 - Download protein sequence data obtain protein sequence features through the Seqvec model.
@@ -44,10 +54,12 @@ we provide the proccesed data for training and evaluating directly [there](""), 
 ``python seq2vec.py``
 
 ### Fuse protein structure and sequence data and divide the dataset
-``cd ./model``
-``python labels_load.p``
-``cd ./data_processing``
-``python divide_data.py``
+```
+cd ./model
+python labels_load.p
+cd ./data_processing
+python divide_data.py
+```
 
 
 
