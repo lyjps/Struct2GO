@@ -1,0 +1,194 @@
+/*
+ * Tencent is pleased to support the open source community by making Angel available.
+ *
+ * Copyright (C) 2017-2018 THL A29 Limited, a Tencent company. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ *
+ * https://opensource.org/licenses/Apache-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is
+ * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+option java_package = "com.tencent.angel.protobuf.generated";
+
+option java_outer_classname = "PSAgentMasterServiceProtos";
+
+option java_generate_equals_and_hash = true;
+
+option java_generic_services = true;
+
+option optimize_for = SPEED;
+
+import "ML.proto";
+
+message GetAllPSAgentLocationRequest {
+
+}
+
+message GetAllPSAgentLocationResponse {
+  repeated PSAgentLocationProto psAgentLocations = 1;
+}
+
+message GetMatricesRequest{
+  repeated string matrixNames = 1;
+}
+
+message GetMatricesResponse{
+  repeated MatrixMetaProto matrixMetas = 1;
+}
+
+message ReleaseMatricesRequest{
+  repeated string matrixNames = 1;
+}
+
+message ReleaseMatricesResponse{
+}
+
+message PSAgentReportRequest {
+  required int32 psAgentId = 1;
+  repeated Pair pairs = 3; 
+}
+
+enum PSAgentCommandProto {
+  PSAGENT_SUCCESS = 0;
+  PSAGENT_NEED_REGISTER = 1;
+  PSAGENT_SHUTDOWN = 2;  
+  PSAGENT_UNKNOWN = 3;
+}
+
+message PSAgentReportResponse { 
+  required PSAgentCommandProto command = 1 [default = PSAGENT_SUCCESS];
+}
+
+message PSAgentRegisterRequest{
+  required int32 psAgentId = 1;
+  required LocationProto location = 2; 
+}
+
+message PSAgentRegisterResponse{
+  required PSAgentCommandProto command = 1 [default = PSAGENT_SUCCESS];
+}
+
+message GetAllMatrixMetaRequest {
+}
+
+message GetAllMatrixMetaResponse {
+  repeated MatrixMetaProto matrixMetas = 2;
+}
+
+message FetchMinClockRequest {
+}
+
+message FetchMinClockResponse {
+  required int32 minClock = 1;
+}
+
+message PSAgentDoneRequest{
+  required int32 psAgentId = 1;
+}
+
+message PSAgentDoneResponse{
+  required PSAgentCommandProto command = 1;
+}
+
+message PSAgentErrorRequest{
+  required int32 psAgentId = 1;
+  required string msg = 2;
+}
+
+message PSAgentErrorResponse{
+  required PSAgentCommandProto command = 1;
+}
+
+message TaskClockRequest {
+  required TaskIdProto taskId = 1;
+  required MatrixClock matrixClock = 2;
+}
+
+message TaskClockResponse {
+
+}
+
+message TaskIterationRequest {
+  required TaskIdProto taskId = 1;
+  required int32 iteration = 2;
+}
+
+message TaskIterationResponse {
+
+}
+
+message TaskCounterUpdateRequest {
+  required TaskIdProto taskId = 1;
+  repeated Pair counters = 2;
+}
+
+message TaskCountersUpdateResponse {
+}
+
+message AlgoMetric {
+  required string name = 1;
+  required bytes serializedMetric = 2;
+}
+message SetAlgoMetricsRequest {
+  required TaskIdProto taskId = 1;
+  repeated AlgoMetric algoMetrics = 2;
+}
+
+message SetAlgoMetricsResponse {
+}
+
+message PSFailedReportRequest {
+  required int32 clientId = 1;
+  required PSLocationProto psLoc = 2;
+}
+
+message PSFailedReportResponse {
+}
+
+message GetPSAgentIdRequest {
+}
+
+message GetPSAgentIdResponse {
+  required int32 psAgentId = 1;
+}
+
+message CheckPSExitRequest {
+  required int32 clientId = 1;
+  required PSLocationProto psLoc = 2;
+}
+
+message CheckPSExitResponse {
+  required int32 exited = 1; // 1 means exited, 0 means not
+}
+
+service PSAgentMasterService {
+  rpc psAgentReport(PSAgentReportRequest) returns (PSAgentReportResponse);	
+  rpc psAgentRegister(PSAgentRegisterRequest) returns (PSAgentRegisterResponse);
+  rpc getAllMatrixMeta(GetAllMatrixMetaRequest) returns (GetAllMatrixMetaResponse);
+  rpc getAllPSLocation(GetAllPSLocationRequest) returns (GetAllPSLocationResponse);
+  rpc getPSLocation(GetPSLocationRequest) returns (GetPSLocationReponse);
+  rpc fetchMinClock(FetchMinClockRequest) returns (FetchMinClockResponse);
+  rpc psAgentDone(PSAgentDoneRequest) returns (PSAgentDoneResponse);	
+  rpc psAgentError(PSAgentErrorRequest) returns (PSAgentErrorResponse);
+
+  rpc createMatrices(CreateMatricesRequest) returns (CreateMatricesResponse);
+  rpc getMatrices(GetMatricesRequest) returns (GetMatricesResponse);
+  rpc releaseMatrices(ReleaseMatricesRequest) returns (ReleaseMatricesResponse);
+
+  rpc taskClock(TaskClockRequest) returns (TaskClockResponse);
+  rpc taskIteration(TaskIterationRequest) returns(TaskIterationResponse);
+  rpc taskCountersUpdate(TaskCounterUpdateRequest) returns (TaskCountersUpdateResponse);
+  rpc setAlgoMetrics(SetAlgoMetricsRequest) returns (SetAlgoMetricsResponse);
+
+  rpc psFailedReport(PSFailedReportRequest) returns (PSFailedReportResponse);
+  rpc getPartLocation(GetPartLocationRequest) returns (GetPartLocationResponse);
+  rpc getStoredPss(GetStoredPssRequest) returns (GetStoredPssResponse);
+  rpc getPSAgentId(GetPSAgentIdRequest) returns (GetPSAgentIdResponse);
+  rpc checkPSExited(CheckPSExitRequest) returns (CheckPSExitResponse);
+}

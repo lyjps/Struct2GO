@@ -1,0 +1,265 @@
+/*
+ * Tencent is pleased to support the open source community by making Angel available.
+ *
+ * Copyright (C) 2017-2018 THL A29 Limited, a Tencent company. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ *
+ * https://opensource.org/licenses/Apache-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is
+ * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+option java_package = "com.tencent.angel.protobuf.generated";
+
+option java_outer_classname = "PSMasterServiceProtos";
+
+option java_generate_equals_and_hash = true;
+
+option java_generic_services = true;
+
+option optimize_for = SPEED;
+
+import "ML.proto";
+
+
+message PSReportRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  repeated MatrixReportProto matrixReports = 2;
+  optional string diagnostics = 3;
+  repeated Pair metrics = 4;
+}
+
+message MatrixReportProto{
+  required int32 matrixId = 1;
+  required string matrixName = 2;
+  repeated PartReportProto partReports = 3;
+}
+
+message PSMatricesSaveResultProto {
+  required int32 requestId = 1;
+  required int32 subRequestId = 2;
+  required int32 saveState = 3;
+  optional string failedLog = 4;
+}
+
+message PSMatricesLoadResultProto {
+  required int32 requestId = 1;
+  required int32 subRequestId = 2;
+  required int32 loadState = 3;
+  optional string failedLog = 4;
+}
+
+message PartReportProto {
+  required int32 partId = 1;
+  required int32 status = 2;
+}
+
+enum PSCommandProto {
+  PSCOMMAND_OK = 1;
+  PSCOMMAND_RESYNC = 2;
+  PSCOMMAND_SHUTDOWN = 3;
+  PSCOMMAND_REGISTER = 4;
+  PSCOMMAND_COMMIT = 5;
+  PSCOMMAND_INVALID = 6;
+}
+
+message PSReportResponse {
+  required PSCommandProto psCommand = 1 [default = PSCOMMAND_OK];
+  repeated MatrixMetaProto needCreateMatrices = 2;
+  repeated int32 needReleaseMatrixIds = 3;
+  optional int32 savingRequest = 4;
+  optional int32 loadingRequest = 5;
+  optional PSMatricesSaveContextProto needSaveMatrices = 6;
+  optional PSMatricesLoadContextProto needLoadMatrices = 7;
+  repeated RecoverPartKeyProto needRecoverParts = 8;
+  optional ExecuteUnitDesc executeUnitDesc = 9;
+}
+
+message PSMatricesSaveContextProto {
+  required int32 requestId = 1;
+  required int32 subRequestId = 2;
+  repeated PSMatrixSaveContextProto subSaveContexts = 3;
+}
+
+message PSMatrixSaveContextProto {
+  required int32 matrixId = 1;
+  repeated int32 partIds = 2;
+  repeated int32 rowIndexes = 3;
+  required string savePath = 4;
+  required string formatClassName = 5;
+  required bool cloneFirst = 6;
+  required bool sortFirst = 7;
+}
+
+message PSMatricesLoadContextProto {
+  required int32 requestId = 1;
+  required int32 subRequestId = 2;
+  repeated PSMatrixLoadContextProto subLoadContexts = 3;
+}
+
+message PSMatrixLoadContextProto {
+  required int32 matrixId = 1;
+  repeated int32 partIds = 2;
+  required string loadPath = 3;
+  required string formatClassName = 4;
+}
+
+message RecoverPartKeyProto {
+  required int32 matrixId = 1;
+  required int32 partId = 2;
+  required PSIdProto psId = 3;
+  required LocationProto loc = 4;
+}
+
+message ExecuteUnitDesc{
+  required int32 totalWorkerGroupNum = 1;
+  required int32 activeWorkerGroupNum = 2;
+  required int32 totalWorkerNum = 3;
+  required int32 activeWorkerNum = 4;
+  required int32 totalTaskNum = 5;
+  required int32 activeTaskNum = 6;
+}
+
+message PSRegisterRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  required LocationProto location = 2;
+}
+
+message PSRegisterResponse {
+  required PSCommandProto psCommand = 1;
+}
+
+message PSDoneRequest{
+  required PSAttemptIdProto psAttemptId = 1;
+}
+
+message PSDoneResponse{
+}
+
+message PSErrorRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  required string msg = 2;
+}
+
+message PSErrorResponse {
+}
+
+message GetExecuteUnitDescRequest{
+
+}
+
+message GetExecuteUnitDescResponse{
+  required ExecuteUnitDesc executeUnitDesc = 1;
+}
+
+message GetTaskMatrixClockRequest {
+}
+
+message TaskMatrixClock {
+  required TaskIdProto taskId = 1;
+  repeated MatrixClock matrixClocks = 2;
+}
+
+message GetTaskMatrixClockResponse {
+  repeated TaskMatrixClock taskMatrixClocks = 1;
+}
+
+message GetIterationRequest {
+}
+
+message GetIterationResponse {
+  required int32 iteration = 1;
+}
+
+message GetPSMatricesMetaRequest {
+  required PSIdProto psId = 1;
+}
+
+message GetPSMatricesResponse {
+  repeated MatrixMetaProto matricesMeta = 1;
+}
+
+message SaveFinishRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  required PSMatricesSaveResultProto result = 2;
+}
+
+message SaveFinishResponse {
+
+}
+
+message LoadFinishRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  required PSMatricesLoadResultProto result = 2;
+}
+
+message LoadFinishResponse {
+
+}
+
+message SaveStartRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  required int32 requestId = 2;
+  required int32 subRequestId = 3;
+}
+
+message SaveStartResponse {
+
+}
+
+message LoadStartRequest {
+  required PSAttemptIdProto psAttemptId = 1;
+  required int32 requestId = 2;
+  required int32 subRequestId = 3;
+}
+
+message LoadStartResponse {
+
+}
+
+message SaveResultProto {
+  required string modelPath = 1;
+  required string matrixPath = 2;
+  required int64 saveTs = 3;
+}
+
+message GetSaveResultsRequest {
+  required int32 matrixId = 1;
+}
+
+message GetSaveResultsResponse {
+  repeated SaveResultProto saveResults = 1;
+}
+
+message GetCheckpointsRequest {
+  required int32 matrixId = 1;
+}
+
+message GetCheckpointsResponse {
+  repeated SaveResultProto saveResults = 1;
+}
+
+service PSMasterService {
+  rpc psRegister(PSRegisterRequest) returns (PSRegisterResponse);
+  rpc psReport(PSReportRequest) returns (PSReportResponse);
+  rpc psDone(PSDoneRequest) returns (PSDoneResponse);
+  rpc psError(PSErrorRequest) returns (PSErrorResponse);
+  rpc getExecuteUnitDesc(GetExecuteUnitDescRequest) returns (GetExecuteUnitDescResponse);
+  rpc getTaskMatrixClocks(GetTaskMatrixClockRequest) returns (GetTaskMatrixClockResponse);
+  rpc getAllPSLocation(GetAllPSLocationRequest) returns (GetAllPSLocationResponse);
+  rpc getPSLocation(GetPSLocationRequest) returns (GetPSLocationReponse);
+  rpc getPartLocation(GetPartLocationRequest) returns (GetPartLocationResponse);
+  rpc getIteration(GetIterationRequest) returns (GetIterationResponse);
+  rpc getPSMatricesMeta(GetPSMatricesMetaRequest) returns (GetPSMatricesResponse);
+  rpc saveFinish(SaveFinishRequest) returns (SaveFinishResponse);
+  rpc loadFinish(LoadFinishRequest) returns (LoadFinishResponse);
+  rpc saveStart(SaveStartRequest) returns (SaveStartResponse);
+  rpc loadStart(LoadStartRequest) returns (LoadStartResponse);
+  rpc getSaveResults(GetSaveResultsRequest) returns (GetSaveResultsResponse);
+  rpc getCheckpointResults(GetCheckpointsRequest) returns (GetCheckpointsResponse);
+}

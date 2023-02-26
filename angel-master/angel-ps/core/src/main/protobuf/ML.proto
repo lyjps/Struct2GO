@@ -1,0 +1,233 @@
+/*
+ * Tencent is pleased to support the open source community by making Angel available.
+ *
+ * Copyright (C) 2017-2018 THL A29 Limited, a Tencent company. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ *
+ * https://opensource.org/licenses/Apache-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is
+ * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+option java_package = "com.tencent.angel.protobuf.generated";
+
+option java_outer_classname = "MLProtos";
+
+option java_generate_equals_and_hash = true;
+
+option java_generic_services = true;
+
+option optimize_for = SPEED;
+
+message Pair{
+  required string key = 1;
+  required string value = 2;
+}
+
+message WorkerGroupIdProto {
+  required int32 workerGroupIndex = 1;
+}
+
+message WorkerIdProto {
+  required WorkerGroupIdProto workerGroupId = 1;
+  required int32 workerIndex = 2;
+}
+
+message WorkerAttemptIdProto {
+  required WorkerIdProto workerId = 1;
+  required int32 attemptIndex = 2;
+}
+
+message TaskIdProto {
+  required int32 taskIndex = 1;
+}
+
+message PSIdProto {
+  required int32 psIndex = 1;
+}
+
+message PSAttemptIdProto {
+  required PSIdProto psId = 1;
+  required int32 attemptIndex = 2;
+}
+
+message PSAgentIdProto {
+  required int32 psAgentIndex = 1;
+}
+
+message PSAgentAttemptIdProto {
+  required PSAgentIdProto psAgentId = 1;
+  required int32 attemptIndex = 2;
+}
+
+message MatrixContextProto {
+  required int32 id = 1;
+  required string name = 2;
+  required int32 rowNum = 3;
+  required int64 colNum = 4;
+  required int64 indexStart = 5;
+  required int64 indexEnd = 6;
+  required int64 validIndexNum = 7;
+  required int32 blockRowNum = 8;
+  required int64 blockColNum = 9;
+  required int32 rowType = 10;
+  required string partitionerClassName = 11;
+  repeated PartContextProto parts = 12;
+  repeated Pair attribute = 13;
+  optional bytes initFunc = 14;
+  required int32 partitionNum = 15;
+}
+
+message PartContextProto {
+  required int32 startRow = 1;
+  required int64 startCol = 2;
+  required int32 endRow = 3;
+  required int64 endCol = 4;
+  required int32 indexNum = 5;
+}
+
+message PartitionMetaProto{
+  required int32 partitionId = 1;
+  required int32 startRow = 2;
+  required int64 startCol = 3;
+  required int32 endRow = 4;
+  required int64 endCol = 5;
+  required int32 indexNum = 6;
+  repeated PSIdProto storedPs = 7;
+}
+
+message MatrixMetaProto {
+  required int32 totalPartNum = 1;
+  required MatrixContextProto matrixContext = 2;
+  repeated PartitionMetaProto partMetas = 3;
+}
+
+message MatrixClock{
+  required int32 matrixId = 1;
+  required int32 clock = 2;
+}
+
+enum MatrixStatus {
+  M_NOT_READY = 1;  // On am no MatrixInfo received from client 
+  M_OK = 2;  // 
+}
+
+enum PSStatus {
+  PS_OK = 1;
+  PS_NOTREADY = 2;
+}
+ 
+enum PSAgentStatus {
+  PSAGENT_OK = 1;
+  PSAGENT_NOTREADY = 2;
+}
+
+
+enum CommitStatus {
+  CommitReady = 1;     // 可以提交
+  CommitBusy = 2;      // 其他taskattemp正在提交
+  CommitExpired = 3;   // 该taskattempt执行缓慢，本地的clock已经落后于master侧的minClock
+  Invalid = 4;
+}
+
+message LocationProto {
+  required string ip = 1;
+  required int32 port = 2;
+}
+
+
+message PSAgentLocationProto {
+  required PSAgentIdProto psAgentId = 1;
+  required PSAgentStatus psAgentStatus = 2;
+  optional LocationProto location = 3;
+}
+
+message PSLocationProto {
+  required PSIdProto psId = 1;
+  required PSStatus psStatus = 2;
+  optional LocationProto location = 3;
+}
+
+// used by client and psagent
+message CreateMatricesRequest{
+  repeated MatrixContextProto matrices = 1;
+}
+
+message CreateMatricesResponse{
+
+}
+
+message GetAllPSLocationRequest {
+
+}
+
+message GetAllPSLocationResponse {
+  repeated PSLocationProto psLocations = 1;
+}
+
+message GetPSLocationRequest {
+  required PSIdProto psId = 1;
+}
+
+message GetPSLocationReponse {
+  required PSLocationProto psLocation = 1;
+}
+
+message CheckMatricesCreatedRequest {
+  repeated string matrixNames = 1;
+}
+
+message CheckMatricesCreatedResponse {
+  required int32 status = 1; // -1: create failed, 0: creating, 1:create success
+  optional string log = 2;
+}
+
+message IntKeyCounter {
+  required int32 key = 1;
+  required int32 counter = 2;
+}
+
+message ServerFailedReportProto {
+  required PSIdProto psId = 1;
+  required LocationProto location = 2;
+  repeated IntKeyCounter counters = 3;
+}
+
+message ServerFailedReportRequest {
+  repeated ServerFailedReportProto reports = 1;
+}
+
+message ServerFailedReportResponse {
+}
+
+message GetPartLocationRequest {
+  required int32 matrixId = 1;
+  required int32 partId = 2;
+}
+
+message GetPartLocationResponse {
+  repeated PSLocationProto locations = 1;
+}
+
+message GetStoredPssRequest {
+  required int32 matrixId = 1;
+  required int32 partId = 2;
+}
+
+message GetStoredPssResponse {
+  repeated PSIdProto psIds = 1;
+}
+
+message PSFailedReportsProto {
+  repeated PSFailedReportProto psFailedReports = 1;
+}
+
+message PSFailedReportProto {
+  required PSLocationProto psLoc = 1;
+  required int32 failedCounter = 2;
+}
