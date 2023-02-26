@@ -11,7 +11,7 @@ Struct2GO is a protein function prediction model based on self-attention graph p
 - Protein annotion: down from the [GOA website](https://www.ebi.ac.uk/GOA/)
 - Gene Ontology: download from the [GO website](http://geneontology.org/)
   
-We put the processed data for train and test on [there]("")
+We put the processed data for train and test on [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data)
 
 # Usage
 ## Train the model
@@ -31,7 +31,7 @@ python run_test.sh
 Note: Remember to update the file directory in the script to your local directory if you wish to evaluation the MFO model or the other two models.
 
 ## Processing raw data
-we provide the proccesed data for training and evaluating directly [there](""), and then we will explain how to process the raw data.
+we provide the proccesed data for training and evaluating directly [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data), and then we will explain how to process the raw data.
 ### Protein struction data
 - Download protein structure data and convert the three-dimensional atomic structure of proteins into protein contact maps.
 ```
