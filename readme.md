@@ -50,8 +50,10 @@ python sort.py
 
 ### Protein sequence data
 - Download protein sequence data obtain protein sequence features through the Seqvec model.
-``cd ./data_processing``
-``python seq2vec.py``
+```
+cd ./data_processing
+python seq2vec.py
+```
 
 ### Fuse protein structure and sequence data and divide the dataset
 ```
