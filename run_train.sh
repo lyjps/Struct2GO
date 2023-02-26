@@ -1,0 +1,1 @@
+nohup python /home/jiaops/lyjps/train_Struct2GO.py -train_data '/home/jiaops/lyjps/divided_data/mf_train_dataset' -valid_data '/home/jiaops/lyjps/divided_data/mf_valid_dataset' -branch 'mf' -labels_num 273 &

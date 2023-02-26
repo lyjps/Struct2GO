@@ -1,0 +1,1 @@
+nohup python /home/jiaops/lyjps/eval_Struct2GO.py -test_data '/home/jiaops/lyjps/divided_data/mf_test_dataset' -branch 'mf' -labels_num 273 &
