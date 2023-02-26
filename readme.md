@@ -6,10 +6,10 @@ Struct2GO is a protein function prediction model based on self-attention graph p
 ![avatar](/model.png)
 
 # Data
-- Protein structure: download from the [AlphaFold Protein Struct Databasee]("https://alphafold.ebi.ac.uk/download")
-- Protein sequence: download from the [UniProt website]("https://www.uniprot.org/") 
-- Protein annotion: down from the [GOA website]("https://www.ebi.ac.uk/GOA/")
-- Gene Ontology: download from the [GO website]("http://geneontology.org/")
+- Protein structure: download from the [AlphaFold Protein Struct Databasee](https://alphafold.ebi.ac.uk/download)
+- Protein sequence: download from the [UniProt website](https://www.uniprot.org/) 
+- Protein annotion: down from the [GOA website]（https://www.ebi.ac.uk/GOA/)
+- Gene Ontology: download from the [GO website]（http://geneontology.org/)
   
 We put the processed data for train and test on [there]("")
 
