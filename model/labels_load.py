@@ -25,8 +25,10 @@ from dgl.nn.pytorch.conv import GINConv
 from dgl.nn.pytorch.glob import SumPooling
 from dgl.nn.pytorch.glob import AvgPooling
 import argparse
-from network import SAGNetworkHierarchical
+# from network import SAGNetworkHierarchical
 from torch.utils.data import Dataset
+import matplotlib.pyplot as plt
+import csv
 
 
 ## 序列数据，转为dataframe
@@ -137,7 +139,8 @@ for i in labels_with_go:
                 #label_bp.append(temp)
                     
 
-#print(len(label_bp))
+
+#print(label_bp)
 #print(label_bp)
 bp_c=collections.Counter()
 
@@ -153,6 +156,7 @@ for i in bp_d:
         bp_set.add(i)
        
 print(len(bp_set))
+print(len(bp_set)/float(len(bp_d)))
 
 cc_c=collections.Counter()
 for i in label_cc:
@@ -163,7 +167,8 @@ for i in cc_d:
     if cc_d[i]>=100:
         cc_set.add(i)
 
-print(len(cc_set))        
+print(len(cc_set))   
+print(len(cc_set)/float(len(cc_d)))     
 
 
 mf_c=collections.Counter()
@@ -176,6 +181,7 @@ for i in mf_d:
         mf_set.add(i)
 
 print(len(mf_set))
+print(len(mf_set)/float(len(mf_d)))
 
 def goterm2idx(term_set):
     term_dict=dict(enumerate(term_set))
@@ -189,23 +195,98 @@ cc_term2idx=goterm2idx(cc_set)
 
 def labels2onehot(labels,index):
     labels_new={}
+    labels1 = {}
     l=len(index)
     for i in labels:
         temp = [0]*l
+        temp_label =[]
         for j in labels[i]:
             if(j in bp_set or j in mf_set or j in cc_set):
                 temp[index[j]]=1
+                temp_label.append(j)
         labels_new[i]=temp
-    return labels_new
+        labels1[i] = temp_label
+    return labels_new, labels1
 
-bp_label2onehot=labels2onehot(label_bp,bp_term2idx)
+
+bp_label2onehot, bp_new_labels =labels2onehot(label_bp,bp_term2idx)
 bp_entry=list(label_bp.keys())
 
-mf_label2onehot=labels2onehot(label_mf,mf_term2idx)
+mf_label2onehot, mf_new_labels=labels2onehot(label_mf,mf_term2idx)
 mf_entry=list(label_mf.keys())
 
-cc_label2onehot=labels2onehot(label_cc,cc_term2idx)
+cc_label2onehot, cc_new_labels=labels2onehot(label_cc,cc_term2idx)
 cc_entry=list(label_cc.keys())
+
+
+
+# 统计每个list的长度
+lengths = [len(value) for value in bp_new_labels.values()]
+plt.gca().set_prop_cycle(None)
+# 绘制直方图
+n, bins, patches = plt.hist(lengths, bins=[0, 100, 200, 300, 400, 500], edgecolor='black', facecolor='blue')  # 这里的bins定义了区间，您可以根据需要调整
+# 在每个柱子上标注数字
+# for i in range(len(n)):
+#     plt.text(bins[i] + 0.5, n[i] + 0.2, str(int(n[i])), ha='center', va='bottom')
+plt.xlabel('Protein Numbers')
+plt.ylabel('GO term Number')
+plt.title('BP-GO')
+plt.legend(loc='upper right')  # 显示图例
+plt.savefig('histogram_bp.svg', format='svg')
+plt.show()
+
+# 将字典转换为一对一的键值对
+pairs = [(key, val) for key, values in bp_new_labels.items() for val in values]
+# 创建DataFrame
+df = pd.DataFrame(pairs, columns=['Protein', 'BP-GO'])
+# 保存为CSV文件
+df.to_csv('gos_bp.csv', index=False)
+
+# 统计每个list的长度
+lengths = [len(value) for value in mf_new_labels.values()]
+plt.gca().set_prop_cycle(None)
+# 绘制直方图
+n, bins, patches = plt.hist(lengths, bins=[0, 100, 200, 300, 400, 500], edgecolor='black', facecolor='blue')  # 这里的bins定义了区间，您可以根据需要调整
+# 在每个柱子上标注数字
+# for i in range(len(n)):
+#     plt.text(bins[i] + 0.5, n[i] + 0.2, str(int(n[i])), ha='center', va='bottom')
+plt.xlabel('Protein Numbers')
+plt.ylabel('GO term Number')
+plt.title('MF-GO')
+plt.legend(loc='upper right')  # 显示图例
+plt.savefig('histogram_mf.svg', format='svg')
+plt.show()
+
+# 将字典转换为一对一的键值对
+pairs = [(key, val) for key, values in mf_new_labels.items() for val in values]
+# 创建DataFrame
+df = pd.DataFrame(pairs, columns=['Protein', 'MF-GO'])
+# 保存为CSV文件
+df.to_csv('gos_mf.csv', index=False)
+
+# 统计每个list的长度
+lengths = [len(value) for value in cc_new_labels.values()]
+plt.gca().set_prop_cycle(None)
+# 绘制直方图
+n, bins, patches = plt.hist(lengths, bins=[0, 100, 200, 300, 400, 500], edgecolor='black', facecolor='blue')  # 这里的bins定义了区间，您可以根据需要调整
+# 在每个柱子上标注数字
+# for i in range(len(n)):
+#     plt.text(bins[i] + 0.5, n[i] + 0.2, str(int(n[i])), ha='center', va='bottom')
+plt.xlabel('Protein Numbers')
+plt.ylabel('GO term Number')
+plt.title('CC-GO')
+plt.legend(loc='upper right')  # 显示图例
+plt.savefig('histogram_cc.svg', format='svg')
+plt.show()
+
+# 将字典转换为一对一的键值对
+pairs = [(key, val) for key, values in bp_new_labels.items() for val in values]
+# 创建DataFrame
+df = pd.DataFrame(pairs, columns=['Protein', 'CC-GO'])
+# 保存为CSV文件
+df.to_csv('gos_cc.csv', index=False)
+
+
 
 
 
@@ -253,6 +334,7 @@ for path,dir_list,file_list in os.walk("/home/jiaops/lyjps/data/struct_feature")
 
 with open('/home/jiaops/lyjps/processed_data/dict_sequence_feature','rb')as f:
     dict_sequence_feature = pickle.load(f)
+
 
 emb_graph_mf = {}
 emb_seq_feature_mf = {}
@@ -338,3 +420,57 @@ with open('/home/jiaops/lyjps/processed_data/emb_graph_bp_without_Node2vec','wb'
 
 # with open('/home/jiaops/lyjps/processed_data/emb_label_bp ','wb')as f:
 #     pickle.dump(emb_label_bp,f)    
+
+
+# create labels network
+G3 = dgl.DGLGraph()
+G3 = dgl.add_self_loop(G3)
+G3.add_nodes(len(bp_set))
+
+term_to_idx = {term: idx for idx, term in enumerate(bp_set)}
+for child, parents in is_a.items():
+    if child in term_to_idx:  # 只考虑 bp_labels 中的节点
+        child_idx = term_to_idx[child]
+        for parent in parents:
+            if parent in term_to_idx:  # 只考虑 bp_labels 中的节点
+                parent_idx = term_to_idx[parent]
+                G3.add_edge(child_idx, parent_idx)
+
+
+with open('/home/jiaops/lyjps/processed_data/label_bp_network ','wb')as f:
+    pickle.dump(G3,f)   
+
+G2 = dgl.DGLGraph()
+G2 = dgl.add_self_loop(G2)
+G2.add_nodes(len(cc_set))
+
+term_to_idx = {term: idx for idx, term in enumerate(cc_set)}
+for child, parents in is_a.items():
+    if child in term_to_idx:  # 只考虑 mf_labels 中的节点
+        child_idx = term_to_idx[child]
+        for parent in parents:
+            if parent in term_to_idx:  # 只考虑 cc_labels 中的节点
+                parent_idx = term_to_idx[parent]
+                G2.add_edge(child_idx, parent_idx)
+
+
+with open('/home/jiaops/lyjps/processed_data/label_cc_network ','wb')as f:
+    pickle.dump(G2,f) 
+
+
+G1 = dgl.DGLGraph()
+G1 = dgl.add_self_loop(G1)
+G1.add_nodes(len(mf_set))
+
+term_to_idx = {term: idx for idx, term in enumerate(mf_set)}
+for child, parents in is_a.items():
+    if child in term_to_idx:  # 只考虑 mf_labels 中的节点
+        child_idx = term_to_idx[child]
+        for parent in parents:
+            if parent in term_to_idx:  # 只考虑 mf_labels 中的节点
+                parent_idx = term_to_idx[parent]
+                G1.add_edge(child_idx, parent_idx)
+
+
+with open('/home/jiaops/lyjps/processed_data/label_mf_network ','wb')as f:
+    pickle.dump(G1,f) 
