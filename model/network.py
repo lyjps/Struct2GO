@@ -2,8 +2,7 @@ import torch
 import torch.nn
 import torch.nn.functional as F
 import dgl
-from dgl.nn import GraphConv, AvgPooling, MaxPooling
-
+from dgl.nn import GraphConv,GATConv, AvgPooling, MaxPooling
 from model.layer import ConvPoolBlock, SAGPool
 
 
@@ -33,14 +32,36 @@ class SAGNetworkHierarchical(torch.nn.Module):
             _o_dim = hid_dim
             convpools.append(ConvPoolBlock(_i_dim, _o_dim, pool_ratio=pool_ratio))
         self.convpools = torch.nn.ModuleList(convpools)
-
-        self.lin1 = torch.nn.Linear(hid_dim * 2 + 1024, hid_dim)
+        self.transformer_encoder = torch.nn.TransformerEncoder(
+            torch.nn.TransformerEncoderLayer(hid_dim * 2 + 1024, nhead=8), num_layers=6)    
+        self.lin1 = torch.nn.Linear(hid_dim * 2 + 1024, hid_dim * 2)
         #self.lin1 = torch.nn.Linear(hid_dim * 2, hid_dim)
         #self.lin1 = torch.nn.Linear(1024,hid_dim)
-        self.lin2 = torch.nn.Linear(hid_dim, hid_dim // 2)
-        self.lin3 = torch.nn.Linear(hid_dim // 2, out_dim)
+        self.lin2 = torch.nn.Linear(hid_dim*2, hid_dim)
+        self.lin3 = torch.nn.Linear(hid_dim, out_dim)
+        self.label_network1 = GATConv(1,1,num_heads=8,allow_zero_in_degree=True)
 
-    def forward(self, graph:dgl.DGLGraph, sequence_feature):
+        self.line_new = torch.nn.Linear(hid_dim * 2 + 1024, out_dim)
+
+
+
+    def update_parent_features(self,label_network:dgl.DGLGraph, labels):
+        # 获取图中的所有边
+        edges = label_network.edges()
+
+        second_dim_elements = labels[0,:]
+        # 对于图中的每条边
+        for child_idx, parent_idx in zip(edges[0], edges[1]):
+            # 如果child节点的特征值大于parent节点的特征值
+            if second_dim_elements[child_idx] > second_dim_elements[parent_idx]:
+                # 更新parent节点的特征值为child节点的特征值
+                second_dim_elements[parent_idx] = second_dim_elements[child_idx]
+         # 更新labels的第二列为second_dim_elements
+        labels[0, :] = second_dim_elements
+        return labels
+    
+
+    def forward(self, graph:dgl.DGLGraph, sequence_feature,label_network:dgl.DGLGraph):
         feat = graph.ndata["feature"]
         final_readout = None
 
@@ -51,11 +72,19 @@ class SAGNetworkHierarchical(torch.nn.Module):
             else:
                 final_readout = final_readout + readout
         final_readout = torch.cat((final_readout,sequence_feature), -1)
+        #con_readout = self.transformer_encoder(final_readout)
+        #final_readout = torch.cat((sequence_feature,con_readout), -1)
         feat = F.relu(self.lin1(final_readout))
         feat = F.dropout(feat, p=self.dropout, training=self.training)
         feat = F.relu(self.lin2(feat))
         #feat = F.log_softmax(self.lin3(feat), dim=-1)
         feat = self.lin3(feat)
+        feat = feat.t()
+        max_value,_ = torch.max(self.label_network1(label_network,feat),dim=1)
+        feat - F.relu(max_value)
+        feat = feat.t()
+        # feat = self.update_parent_features(label_network, feat)
+        #feat = self.line_new(final_readout)
         #feat = torch.sigmoid(feat)
         
         return feat
@@ -116,6 +145,7 @@ class SAGNetworkGlobal(torch.nn.Module):
         feat = self.lin3(feat)
 
         return feat
+
 
 
 def get_sag_network(net_type:str="hierarchical"):
