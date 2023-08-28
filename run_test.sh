@@ -1,1 +1,3 @@
-nohup python /home/jiaops/lyjps/eval_Struct2GO.py -test_data '/home/jiaops/lyjps/divided_data/mf_test_dataset' -branch 'mf' -labels_num 273 &
+nohup python /home/jiaops/lyjps/eval_Struct2GO.py -test_data '/home/jiaops/lyjps/divided_data/mf_test_dataset' -branch 'mf' -model '/home/jiaops/lyjps/save_models/mymodel_mf_1_0.0005_0.45.pkl' -labels_num 273 -label_network '/home/jiaops/lyjps/processed_data/label_mf_network '&
+nohup python /home/jiaops/lyjps/eval_Struct2GO.py -test_data '/home/jiaops/lyjps/divided_data/bp_test_dataset' -branch 'bp' -model '/home/jiaops/lyjps/save_models/mymodel_bp_1_0.0005_0.45.pkl' -labels_num 809 -label_network '/home/jiaops/lyjps/processed_data/label_bp_network '&
+nohup python /home/jiaops/lyjps/eval_Struct2GO.py -test_data '/home/jiaops/lyjps/divided_data/cc_test_dataset' -branch 'cc' -model '/home/jiaops/lyjps/save_models/mymodel_cc_1_0.0005_0.45.pkl' -labels_num 298 -label_network '/home/jiaops/lyjps/processed_data/label_cc_network '&
