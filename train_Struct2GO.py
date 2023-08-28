@@ -60,6 +60,7 @@ if __name__ == "__main__":
     parser.add_argument('-valid_data', '--valid_data',type=str,default='/home/jiaops/lyjps/divided_data/mf_valid_dataset')
     parser.add_argument('-branch', '--branch',type=str,default='mf')
     parser.add_argument('-labels_num', '--labels_num',type=int,default=273)
+    parser.add_argument('-label_network', '--label_network', type=str, default='/home/jiaops/lyjps/processed_data/label_mf_network ')
 
     args = parser.parse_args()
 
@@ -67,6 +68,8 @@ if __name__ == "__main__":
         train_dataset = pickle.load(f)
     with open(args.valid_data,'rb')as f:
         valid_dataset = pickle.load(f)
+    with open(args.label_network,'rb')as f:
+        label_network=pickle.load(f)
 
         
 
@@ -122,31 +125,65 @@ if __name__ == "__main__":
     best_fscore = 0
     best_scores = []
     best_score_dict = {}
+
+
     for epoch in range(5):
         model.train()
         _loss = 0
         batch_num = 0
+        train_pred = []
+        train_actual = []
         for batched_graph, labels,sequence_feature in dataloader:
-            logits = model(batched_graph.to('cuda'),sequence_feature.to('cuda'))
+            logits = model(batched_graph.to('cuda'),sequence_feature.to('cuda'),label_network.to('cuda'))
             labels = torch.reshape(labels,(-1,labels_num))
             loss = F.cross_entropy(logits,labels.to('cuda'))
             # F.binary_cross_entropy()
+            #loss = F.binary_cross_entropy(logits,labels.to('cuda'))
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
             _loss += loss.item()
             batch_num += 1
+            train_pred.append(torch.sigmoid(logits).tolist())
+            train_actual.append(labels.tolist())
         epoch_loss = "{}".format(_loss / batch_num)
+        # fpr, tpr, th = roc_curve(np.array(train_actual).flatten(), np.array(train_pred).flatten(), pos_label=1)
+        # auc_score = auc(fpr, tpr)
+        # aupr=cacul_aupr(np.array(train_actual).flatten(), np.array(train_pred).flatten())
+        # score_dict = {}
+        # each_best_fcore = 0
+        # #best_fscore = 0
+        # each_best_scores = []
+        # #writer.add_pr_curve('pr_curve',actual,pred,0,num_thresholds=labels_num)
+        # for i in range(len(Thresholds)):
+        #     f_score,precision, recall  = calculate_performance(train_actual, train_pred, label_network,threshold=Thresholds[i])
+        #     if f_score >= each_best_fcore:
+        #         each_best_fcore = f_score
+        #         each_best_scores = [Thresholds[i], f_score, recall, precision, auc_score]
+        #         scores = [f_score, recall, precision, auc_score]
+        #         score_dict[Thresholds[i]] = scores
+        # if each_best_fcore >= best_fscore:
+        #     best_fscore = each_best_fcore
+        #     best_scores = each_best_scores
+        #     best_score_dict = score_dict
+        #     torch.save(model, '/home/jiaops/lyjps/save_models/mymodel_{}_{}_{}_{}.pkl'.format(args.branch,batch_size,learningrate,dropout))
+        # t, f_score, recall = each_best_scores[0], each_best_scores[1], each_best_scores[2]
+        # precision, auc_score = each_best_scores[3], each_best_scores[4] 
+        # print('########training metric###########')
+        # print('epoch{},loss{},testloss:{},t:{},f_score{}, auc{}, recall{}, precision{},aupr{}'.format(
+        #         epoch, epoch_loss, epoch_loss, t, f_score, auc_score, recall, precision,aupr))
+
 
         t_loss = 0
         valid_batch_num = 0
         pred = []
         actual = []
         model.eval()
-        for batched_graph, labels,sequence_feature  in valid_dataloader:
-            logits = model(batched_graph.to('cuda'), sequence_feature.to('cuda'))
+        for batched_graph, labels,sequence_feature  in dataloader:
+            logits = model(batched_graph.to('cuda'),sequence_feature.to('cuda'),label_network.to('cuda'))
             labels = torch.reshape(labels,(-1,labels_num))
             loss = F.cross_entropy(logits,labels.to('cuda'))
+            #loss = F.binary_cross_entropy(logits,labels.to('cuda'))
             t_loss += loss.item()
             valid_batch_num += 1
             pred.append(torch.sigmoid(logits).tolist())
@@ -163,7 +200,7 @@ if __name__ == "__main__":
         each_best_scores = []
         #writer.add_pr_curve('pr_curve',actual,pred,0,num_thresholds=labels_num)
         for i in range(len(Thresholds)):
-            f_score,precision, recall  = calculate_performance(actual, pred, threshold=Thresholds[i])
+            f_score,precision, recall  = calculate_performance(actual, pred, label_network,threshold=Thresholds[i])
             if f_score >= each_best_fcore:
                 each_best_fcore = f_score
                 each_best_scores = [Thresholds[i], f_score, recall, precision, auc_score]
@@ -176,6 +213,7 @@ if __name__ == "__main__":
             torch.save(model, '/home/jiaops/lyjps/save_models/mymodel_{}_{}_{}_{}.pkl'.format(args.branch,batch_size,learningrate,dropout))
         t, f_score, recall = each_best_scores[0], each_best_scores[1], each_best_scores[2]
         precision, auc_score = each_best_scores[3], each_best_scores[4] 
+        print('########valid metric###########')
         print('epoch{},loss{},testloss:{},t:{},f_score{}, auc{}, recall{}, precision{},aupr{}'.format(
                 epoch, epoch_loss, test_loss, t, f_score, auc_score, recall, precision,aupr))
         #precision, recall, thresholds = precision_recall_curve(np.array(actual).flatten(), np.array(pred).flatten())
