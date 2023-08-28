@@ -12,6 +12,18 @@ Struct2GO is a protein function prediction model based on self-attention graph p
 - Gene Ontology: download from the [GO website](http://geneontology.org/)
   
 We put the processed data for train and test on [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data)
+We put the Source Data [there] 
+inluced:
+| File/Folder name                | Description                                              |
+| ------------------------------- | -------------------------------------------------------- |
+| predicted_struct_protein_data   | Alphafold2 predicted human protein 3D structure datasets.|
+| protein_contact_map             | Computed CA-CA protein contact map.                      |
+| struct_feature                  | Protein structural features.                             |
+| dict_sequence_feature           | Protein sequence features.                               |
+| gos_bp.csv                      | GO terms corresponding to all human proteins in the BP branch. |
+| gos_mf.csv                      | GO terms corresponding to all human proteins in the MF branch. |
+| gos_cc.csv                      | GO terms corresponding to all human proteins in the CC branch. |
+
 
 # Usage
 ## Train the model
