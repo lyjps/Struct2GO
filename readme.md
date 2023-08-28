@@ -11,8 +11,8 @@ Struct2GO is a protein function prediction model based on self-attention graph p
 - Protein annotion: down from the [GOA website](https://www.ebi.ac.uk/GOA/)
 - Gene Ontology: download from the [GO website](http://geneontology.org/)
   
-We put the processed data for train and test on [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data)
-We put the Source Data [there] 
+We put the processed data for train and test on [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data)\
+We put the Source Data [there] \
 inluced:
 | File/Folder name                | Description                                              |
 | ------------------------------- | -------------------------------------------------------- |
