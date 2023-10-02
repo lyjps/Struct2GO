@@ -13,7 +13,7 @@ Struct2GO is a protein function prediction model based on self-attention graph p
   
 We put the processed data for train and test on [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data)\
 We put the Source Data [there](https://github.com/lyjps/Struct2GO/tree/Source_data/Source_data) \
-inluced:
+include:
 | File/Folder name                | Description                                              |
 | ------------------------------- | -------------------------------------------------------- |
 | predicted_struct_protein_data   | Alphafold2 predicted human protein 3D structure datasets.|
