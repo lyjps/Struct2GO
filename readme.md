@@ -13,6 +13,7 @@ Struct2GO is a protein function prediction model based on self-attention graph p
   
 We put the processed data for train and test on [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data)\
 We put the Source Data [there](https://github.com/lyjps/Struct2GO/tree/Source_data/Source_data) \
+predicted_struct_protein_data.tar.gz、protein_contact_map.tar.gz、struct_feature.tar.gz supplement [there](https://pan.baidu.com/s/15lyLZ2gMwzop50aUennTPQ?pwd=bcqc)\
 include:
 | File/Folder name                | Description                                              |
 | ------------------------------- | -------------------------------------------------------- |
