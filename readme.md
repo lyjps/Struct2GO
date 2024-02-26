@@ -44,7 +44,7 @@ python run_test.sh
 Note: Remember to update the file directory in the script to your local directory if you wish to evaluation the MFO model or the other two models.
 
 ## Processing raw data
-we provide the proccesed data for training and evaluating directly [there](https://github.com/lyjps/Struct2GO/tree/master/divided_data), and then we will explain how to process the raw data.
+we provide the proccesed data for training and evaluating directly [there](https://pan.baidu.com/s/1qVr5RuUbg2cDByJMnEVVrw?pwd=uf3s), and then we will explain how to process the raw data.
 ### Protein struction data
 - Download protein structure data and convert the three-dimensional atomic structure of proteins into protein contact maps.
 ```
