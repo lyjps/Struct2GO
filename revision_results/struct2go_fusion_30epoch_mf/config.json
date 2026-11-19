@@ -1,0 +1,59 @@
+{
+  "branch": "mf",
+  "output": "revision_results\\struct2go_fusion_30epoch_mf",
+  "data_dir": ".",
+  "epochs": 30,
+  "batch_size": 8,
+  "seeds": [
+    0
+  ],
+  "device": "cuda",
+  "split_audit": {
+    "train": {
+      "proteins": 7627,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 7627,
+      "mean_plddt_percentiles": [
+        32.929205894470215,
+        67.82546639442444,
+        78.55114936828613,
+        86.85723543167114,
+        98.43137264251709
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2178,
+      "exact_sequence_exclusions": 1,
+      "unique_sequence_feature_vectors": 2178,
+      "mean_plddt_percentiles": [
+        30.20589053630829,
+        68.90436261892319,
+        79.06788289546967,
+        87.22003400325775,
+        98.20142388343811
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    },
+    "test": {
+      "proteins": 1085,
+      "exact_sequence_exclusions": 6,
+      "unique_sequence_feature_vectors": 1085,
+      "mean_plddt_percentiles": [
+        39.25844132900238,
+        68.22943687438965,
+        78.71837615966797,
+        87.80267238616943,
+        98.58721494674683
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0,
+        "valid": 0
+      }
+    }
+  },
+  "width": 512,
+  "pool_ratio": 0.75
+}

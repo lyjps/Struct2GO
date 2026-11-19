@@ -1,0 +1,63 @@
+{
+  "settings": {
+    "branch": "mf",
+    "variants": [
+      "aligned",
+      "shuffled"
+    ],
+    "cache": ".revision-cache\\uax_residues",
+    "temporal_labels": null,
+    "temporal_cache": null,
+    "pretrained_structure": true,
+    "global_skip": false,
+    "evaluate_test": false,
+    "output": "revision_results\\mf_uax_residue_soft_confidence_validation.json",
+    "epochs": 16,
+    "patience": 5,
+    "seeds": [
+      0
+    ],
+    "width": 96,
+    "token_budget": 12000,
+    "lr": [
+      0.001
+    ],
+    "strength": [
+      0.2
+    ],
+    "device": "cuda"
+  },
+  "counts": {
+    "train": {
+      "included": 6516,
+      "available": 7627
+    },
+    "valid": {
+      "included": 1860,
+      "available": 2178
+    }
+  },
+  "metrics": [
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.2,
+      "best_epoch": 14,
+      "last_epoch": 16,
+      "validation_fmax": 0.7447916305830151,
+      "validation_threshold": 0.42
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.2,
+      "best_epoch": 16,
+      "last_epoch": 16,
+      "validation_fmax": 0.7446911323441707,
+      "validation_threshold": 0.37
+    }
+  ],
+  "aligned_minus_control": {}
+}

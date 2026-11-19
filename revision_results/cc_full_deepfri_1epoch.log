@@ -1,0 +1,9 @@
+Official DeepFRI inference parity, maximum absolute error 3.91155e-08
+cc train 8962 0
+cc valid 2552 8
+cc test 1278 3
+train cached official LSTM for 8962 proteins
+valid cached official LSTM for 2552 proteins
+test cached official LSTM for 1278 proteins
+Full DeepFRI cc epoch 1 validation objective 0.183470
+{"valid_fmax": 0.6432654641098074, "valid_threshold": 0.29, "test_f1_at_valid_threshold": 0.6430918571898414, "test_fmax": 0.6437804947179474, "test_micro_aupr": 0.6207329996772171}

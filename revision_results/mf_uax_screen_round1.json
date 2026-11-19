@@ -1,0 +1,111 @@
+{
+  "settings": {
+    "branch": "mf",
+    "variants": [
+      "original",
+      "sequence",
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "seeds": [
+      0
+    ],
+    "epochs": 8,
+    "patience": 3,
+    "width": 64,
+    "batch_size": 48,
+    "output": "revision_results\\mf_uax_screen_round1.json",
+    "evaluate_test": false,
+    "device": "cuda"
+  },
+  "audit": {
+    "train": {
+      "proteins": 7627,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 7627,
+      "mean_plddt_percentiles": [
+        32.929205894470215,
+        67.82546639442444,
+        78.55114936828613,
+        86.85723543167114,
+        98.43137264251709
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2178,
+      "exact_sequence_exclusions": 1,
+      "unique_sequence_feature_vectors": 2178,
+      "mean_plddt_percentiles": [
+        30.20589053630829,
+        68.90436261892319,
+        79.06788289546967,
+        87.22003400325775,
+        98.20142388343811
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    },
+    "test": {
+      "proteins": 1085,
+      "exact_sequence_exclusions": 6,
+      "unique_sequence_feature_vectors": 1085,
+      "mean_plddt_percentiles": [
+        39.25844132900238,
+        68.22943687438965,
+        78.71837615966797,
+        87.80267238616943,
+        98.58721494674683
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0,
+        "valid": 0
+      }
+    }
+  },
+  "metrics": [
+    {
+      "variant": "original",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.6765075484912818,
+      "validation_fmax": 0.6802149232704587,
+      "valid_threshold": 0.3
+    },
+    {
+      "variant": "sequence",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.7011499655867287,
+      "validation_fmax": 0.7025951417081633,
+      "valid_threshold": 0.32
+    },
+    {
+      "variant": "neutral",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.7146209699523373,
+      "validation_fmax": 0.7060463177293321,
+      "valid_threshold": 0.35
+    },
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.716569968318557,
+      "validation_fmax": 0.7062596676664594,
+      "valid_threshold": 0.37
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.7174338611373098,
+      "validation_fmax": 0.7072686722877557,
+      "valid_threshold": 0.33
+    }
+  ],
+  "aligned_minus_control": {}
+}

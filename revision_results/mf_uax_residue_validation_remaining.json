@@ -1,0 +1,84 @@
+{
+  "settings": {
+    "branch": "mf",
+    "variants": [
+      "random_geometry",
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "cache": ".revision-cache\\uax_residues",
+    "temporal_labels": null,
+    "temporal_cache": null,
+    "pretrained_structure": false,
+    "evaluate_test": false,
+    "output": "revision_results\\mf_uax_residue_validation_remaining.json",
+    "epochs": 12,
+    "patience": 4,
+    "seeds": [
+      0
+    ],
+    "width": 96,
+    "token_budget": 12000,
+    "lr": [
+      0.001
+    ],
+    "strength": [
+      0.7
+    ],
+    "device": "cuda"
+  },
+  "counts": {
+    "train": {
+      "included": 6516,
+      "available": 7627
+    },
+    "valid": {
+      "included": 1860,
+      "available": 2178
+    }
+  },
+  "metrics": [
+    {
+      "variant": "random_geometry",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.7469275512682941,
+      "validation_threshold": 0.42
+    },
+    {
+      "variant": "neutral",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.7462407870755795,
+      "validation_threshold": 0.42
+    },
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.7,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.7354396528246286,
+      "validation_threshold": 0.5
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.7,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.7386282332048187,
+      "validation_threshold": 0.49
+    }
+  ],
+  "aligned_minus_control": {}
+}

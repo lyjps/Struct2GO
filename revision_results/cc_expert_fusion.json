@@ -1,0 +1,612 @@
+{
+  "settings": {
+    "branch": "cc",
+    "diamond": ".revision-cache\\diamond\\diamond.exe",
+    "output": "revision_results\\cc_expert_fusion.json",
+    "epochs": 8,
+    "batch_size": 64,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "device": "cuda",
+    "width": 48,
+    "patience": 3
+  },
+  "split_audit": {
+    "train": {
+      "proteins": 8962,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 8962,
+      "mean_plddt_percentiles": [
+        26.18144154548645,
+        67.355377972126,
+        77.94769406318665,
+        86.61873042583466,
+        98.58721494674683
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2552,
+      "exact_sequence_exclusions": 8,
+      "unique_sequence_feature_vectors": 2552,
+      "mean_plddt_percentiles": [
+        31.466105580329895,
+        68.191859126091,
+        78.29306125640869,
+        86.70265525579453,
+        98.35022687911987
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    },
+    "test": {
+      "proteins": 1278,
+      "exact_sequence_exclusions": 3,
+      "unique_sequence_feature_vectors": 1278,
+      "mean_plddt_percentiles": [
+        29.681187868118286,
+        68.56646090745926,
+        78.43458652496338,
+        86.34869903326035,
+        98.18755388259888
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0,
+        "valid": 0
+      }
+    }
+  },
+  "validation_parts": [
+    1276,
+    765,
+    511
+  ],
+  "metrics": [
+    {
+      "variant": "diamond",
+      "seed": 0,
+      "valid_fmax": 0.651725100272647,
+      "valid_threshold": 0.42,
+      "test_f1_at_valid_threshold": 0.6391217490321608,
+      "test_fmax": 0.6395505739351167,
+      "test_micro_aupr": 0.5552275793185008
+    },
+    {
+      "variant": "deepgoplus_control",
+      "seed": 0,
+      "valid_fmax": 0.7189104930748643,
+      "valid_threshold": 0.32,
+      "test_f1_at_valid_threshold": 0.7213054263629223,
+      "test_fmax": 0.7213054263629223,
+      "test_micro_aupr": 0.6920940729860271
+    },
+    {
+      "variant": "sequence_static",
+      "seed": 0,
+      "valid_fmax": 0.7359851529828869,
+      "valid_threshold": 0.3,
+      "test_f1_at_valid_threshold": 0.7323291947245291,
+      "test_fmax": 0.7328930886797005,
+      "test_micro_aupr": 0.7329524364056986
+    },
+    {
+      "variant": "sequence_routed",
+      "seed": 0,
+      "valid_fmax": 0.7475957397497422,
+      "valid_threshold": 0.4,
+      "test_f1_at_valid_threshold": 0.7411658535669663,
+      "test_fmax": 0.7428924510253228,
+      "test_micro_aupr": 0.7475537446666689
+    },
+    {
+      "variant": "structure_static",
+      "seed": 0,
+      "valid_fmax": 0.7359851529828869,
+      "valid_threshold": 0.3,
+      "test_f1_at_valid_threshold": 0.7323291947245291,
+      "test_fmax": 0.7328930886797005,
+      "test_micro_aupr": 0.7329524203623335
+    },
+    {
+      "variant": "structure_routed",
+      "seed": 0,
+      "valid_fmax": 0.747569481774012,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.7403317275956582,
+      "test_fmax": 0.7428723013037033,
+      "test_micro_aupr": 0.7476624018733007
+    },
+    {
+      "variant": "confidence_routed",
+      "seed": 0,
+      "valid_fmax": 0.7477774438532098,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.741438981871055,
+      "test_fmax": 0.7436448471320616,
+      "test_micro_aupr": 0.7482322683409016
+    },
+    {
+      "variant": "shuffled_routed",
+      "seed": 0,
+      "valid_fmax": 0.7480845103506385,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.7408247171301969,
+      "test_fmax": 0.7430249959732952,
+      "test_micro_aupr": 0.7478876773294568
+    },
+    {
+      "variant": "diamond",
+      "seed": 1,
+      "valid_fmax": 0.651725100272647,
+      "valid_threshold": 0.42,
+      "test_f1_at_valid_threshold": 0.6391217490321608,
+      "test_fmax": 0.6395505739351167,
+      "test_micro_aupr": 0.5552275793185008
+    },
+    {
+      "variant": "deepgoplus_control",
+      "seed": 1,
+      "valid_fmax": 0.7175378939117741,
+      "valid_threshold": 0.31,
+      "test_f1_at_valid_threshold": 0.7186310814352018,
+      "test_fmax": 0.7193597598127955,
+      "test_micro_aupr": 0.691204765443759
+    },
+    {
+      "variant": "sequence_static",
+      "seed": 1,
+      "valid_fmax": 0.736477613482493,
+      "valid_threshold": 0.32,
+      "test_f1_at_valid_threshold": 0.7336488469545223,
+      "test_fmax": 0.7339725243880687,
+      "test_micro_aupr": 0.7323548127577733
+    },
+    {
+      "variant": "sequence_routed",
+      "seed": 1,
+      "valid_fmax": 0.7483848603595464,
+      "valid_threshold": 0.42,
+      "test_f1_at_valid_threshold": 0.7397988342792616,
+      "test_fmax": 0.7437334136517172,
+      "test_micro_aupr": 0.7478905079118239
+    },
+    {
+      "variant": "structure_static",
+      "seed": 1,
+      "valid_fmax": 0.736477613482493,
+      "valid_threshold": 0.32,
+      "test_f1_at_valid_threshold": 0.7336488469545223,
+      "test_fmax": 0.7339725243880687,
+      "test_micro_aupr": 0.7323547842987883
+    },
+    {
+      "variant": "structure_routed",
+      "seed": 1,
+      "valid_fmax": 0.7481888797543371,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.7404540345193416,
+      "test_fmax": 0.7437529410989229,
+      "test_micro_aupr": 0.748035550104267
+    },
+    {
+      "variant": "confidence_routed",
+      "seed": 1,
+      "valid_fmax": 0.7484265445254186,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.7407739923025963,
+      "test_fmax": 0.7448525595907793,
+      "test_micro_aupr": 0.7486397629850448
+    },
+    {
+      "variant": "shuffled_routed",
+      "seed": 1,
+      "valid_fmax": 0.7486191102495511,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.7401542913561877,
+      "test_fmax": 0.7440426324061287,
+      "test_micro_aupr": 0.7483118978857145
+    },
+    {
+      "variant": "diamond",
+      "seed": 2,
+      "valid_fmax": 0.651725100272647,
+      "valid_threshold": 0.42,
+      "test_f1_at_valid_threshold": 0.6391217490321608,
+      "test_fmax": 0.6395505739351167,
+      "test_micro_aupr": 0.5552275793185008
+    },
+    {
+      "variant": "deepgoplus_control",
+      "seed": 2,
+      "valid_fmax": 0.7184594170367855,
+      "valid_threshold": 0.31,
+      "test_f1_at_valid_threshold": 0.7216054830029269,
+      "test_fmax": 0.7220202582071361,
+      "test_micro_aupr": 0.6934335043229325
+    },
+    {
+      "variant": "sequence_static",
+      "seed": 2,
+      "valid_fmax": 0.7345977231210629,
+      "valid_threshold": 0.33,
+      "test_f1_at_valid_threshold": 0.7332855763361934,
+      "test_fmax": 0.7335004931355087,
+      "test_micro_aupr": 0.7324607029761835
+    },
+    {
+      "variant": "sequence_routed",
+      "seed": 2,
+      "valid_fmax": 0.7470014510808655,
+      "valid_threshold": 0.42,
+      "test_f1_at_valid_threshold": 0.7406116943021593,
+      "test_fmax": 0.7433666533945442,
+      "test_micro_aupr": 0.7479303744764262
+    },
+    {
+      "variant": "structure_static",
+      "seed": 2,
+      "valid_fmax": 0.7345977231210629,
+      "valid_threshold": 0.33,
+      "test_f1_at_valid_threshold": 0.7332855763361934,
+      "test_fmax": 0.7335004931355087,
+      "test_micro_aupr": 0.732460668599966
+    },
+    {
+      "variant": "structure_routed",
+      "seed": 2,
+      "valid_fmax": 0.7472033880948895,
+      "valid_threshold": 0.42,
+      "test_f1_at_valid_threshold": 0.740469974765168,
+      "test_fmax": 0.7434227281486233,
+      "test_micro_aupr": 0.748095118958182
+    },
+    {
+      "variant": "confidence_routed",
+      "seed": 2,
+      "valid_fmax": 0.7473102801439886,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.7413063842039869,
+      "test_fmax": 0.7438237939930434,
+      "test_micro_aupr": 0.7486781616583363
+    },
+    {
+      "variant": "shuffled_routed",
+      "seed": 2,
+      "valid_fmax": 0.7472766134540421,
+      "valid_threshold": 0.41,
+      "test_f1_at_valid_threshold": 0.741188382166223,
+      "test_fmax": 0.7432767795920069,
+      "test_micro_aupr": 0.7484481249607818
+    }
+  ],
+  "contrasts": {
+    "sequence_routed_minus_deepgoplus_control": {
+      "all": {
+        "n": 1278,
+        "mean_delta": 0.020011463782444745,
+        "seed_deltas": [
+          0.019860427204043796,
+          0.021167752844058696,
+          0.019006211299231746
+        ],
+        "test_protein_bootstrap_95": [
+          0.015337203232255028,
+          0.024592852576771154
+        ]
+      },
+      "no_close_hit": {
+        "n": 887,
+        "mean_delta": 0.0199504258559345,
+        "seed_deltas": [
+          0.019888382818401995,
+          0.02155947884315712,
+          0.01840341590624439
+        ],
+        "test_protein_bootstrap_95": [
+          0.013477370719943487,
+          0.026917029745269102
+        ]
+      },
+      "close_hit": {
+        "n": 391,
+        "mean_delta": 0.027095753535717065,
+        "seed_deltas": [
+          0.02732508030063674,
+          0.026941333133224776,
+          0.027020847173289675
+        ],
+        "test_protein_bootstrap_95": [
+          0.019842759194087636,
+          0.034157180682353114
+        ]
+      },
+      "no_detected_hit": {
+        "n": 356,
+        "mean_delta": 0.08541722724317746,
+        "seed_deltas": [
+          0.08912855252113072,
+          0.08948050437270283,
+          0.07764262483569884
+        ],
+        "test_protein_bootstrap_95": [
+          0.07321688834161016,
+          0.09743174711114812
+        ]
+      }
+    },
+    "sequence_routed_minus_sequence_static": {
+      "all": {
+        "n": 1278,
+        "mean_delta": 0.007437588044380661,
+        "seed_deltas": [
+          0.008836658842437561,
+          0.006149987324739037,
+          0.007326117965965384
+        ],
+        "test_protein_bootstrap_95": [
+          0.003499348433335674,
+          0.011652608738337433
+        ]
+      },
+      "no_close_hit": {
+        "n": 887,
+        "mean_delta": -0.001236521354177215,
+        "seed_deltas": [
+          -0.0003644999677655525,
+          -0.0030008323028963835,
+          -0.0003442317918697091
+        ],
+        "test_protein_bootstrap_95": [
+          -0.005116741456294478,
+          0.0025969058392043497
+        ]
+      },
+      "close_hit": {
+        "n": 391,
+        "mean_delta": 0.027603903244288446,
+        "seed_deltas": [
+          0.029696514449391365,
+          0.027404887542400114,
+          0.025710307741073857
+        ],
+        "test_protein_bootstrap_95": [
+          0.01910353322526166,
+          0.03631843454298024
+        ]
+      },
+      "no_detected_hit": {
+        "n": 356,
+        "mean_delta": 0.0035240386474922523,
+        "seed_deltas": [
+          0.00046368169559141137,
+          0.003668013841422124,
+          0.006440420405463221
+        ],
+        "test_protein_bootstrap_95": [
+          0.0017476513091374268,
+          0.005324184987782385
+        ]
+      }
+    },
+    "structure_routed_minus_sequence_routed": {
+      "all": {
+        "n": 1278,
+        "mean_delta": -0.00010688175607317015,
+        "seed_deltas": [
+          -0.000834125971308386,
+          0.0006552002400802559,
+          -0.0001417195369913804
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0005496207998455654,
+          0.00026883363304351356
+        ]
+      },
+      "no_close_hit": {
+        "n": 887,
+        "mean_delta": -0.00028389090614892404,
+        "seed_deltas": [
+          -0.0013400635630264057,
+          0.0006474086109967692,
+          -0.0001590177664171355
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0008071456011545287,
+          0.0002284109776756073
+        ]
+      },
+      "close_hit": {
+        "n": 391,
+        "mean_delta": 0.0003221620973300106,
+        "seed_deltas": [
+          0.00010623395005227021,
+          0.000938780617131596,
+          -7.852827519383432e-05
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0003289381433170443,
+          0.0009880370104013287
+        ]
+      },
+      "no_detected_hit": {
+        "n": 356,
+        "mean_delta": 0.00035769479935832127,
+        "seed_deltas": [
+          -0.002032872863543256,
+          0.0028342077352782047,
+          0.0002717495263400149
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0005031092184382691,
+          0.0012199879376651732
+        ]
+      }
+    },
+    "confidence_routed_minus_structure_routed": {
+      "all": {
+        "n": 1278,
+        "mean_delta": 0.0007545404991567602,
+        "seed_deltas": [
+          0.0011072542753968184,
+          0.00031995778325455415,
+          0.0008364094388189081
+        ],
+        "test_protein_bootstrap_95": [
+          0.00023332957597808996,
+          0.0013072880898594096
+        ]
+      },
+      "no_close_hit": {
+        "n": 887,
+        "mean_delta": 0.001096117124761653,
+        "seed_deltas": [
+          0.0013051611224565995,
+          0.0004862507989487064,
+          0.0014969394528796531
+        ],
+        "test_protein_bootstrap_95": [
+          0.000416738791867464,
+          0.001802807737520291
+        ]
+      },
+      "close_hit": {
+        "n": 391,
+        "mean_delta": 0.00023504716435477727,
+        "seed_deltas": [
+          0.0008217749850099043,
+          9.936003303756547e-05,
+          -0.00021599352498313795
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0004818312235390763,
+          0.0010155501426262524
+        ]
+      },
+      "no_detected_hit": {
+        "n": 356,
+        "mean_delta": 0.0022407010717585183,
+        "seed_deltas": [
+          0.0020464246932210273,
+          0.0010839326371819835,
+          0.0035917458848725436
+        ],
+        "test_protein_bootstrap_95": [
+          0.0010865855177390332,
+          0.0035248858220532434
+        ]
+      }
+    },
+    "confidence_routed_minus_shuffled_routed": {
+      "all": {
+        "n": 1278,
+        "mean_delta": 0.000450655908343552,
+        "seed_deltas": [
+          0.0006142647408582391,
+          0.000619700946408619,
+          0.00011800203776379803
+        ],
+        "test_protein_bootstrap_95": [
+          4.64274708926941e-05,
+          0.0009038162269578689
+        ]
+      },
+      "no_close_hit": {
+        "n": 887,
+        "mean_delta": 0.00046392972331347576,
+        "seed_deltas": [
+          0.0007609075029811896,
+          0.0004503085620952696,
+          0.00018057310486396805
+        ],
+        "test_protein_bootstrap_95": [
+          -6.418082143232473e-05,
+          0.0009712926149250695
+        ]
+      },
+      "close_hit": {
+        "n": 391,
+        "mean_delta": 0.0004677419786461486,
+        "seed_deltas": [
+          0.0003968269892371534,
+          0.0009765066478530926,
+          2.9892298848199772e-05
+        ],
+        "test_protein_bootstrap_95": [
+          -0.00022054887908872222,
+          0.001268166481825092
+        ]
+      },
+      "no_detected_hit": {
+        "n": 356,
+        "mean_delta": 0.00046534735702219443,
+        "seed_deltas": [
+          0.00030844227417281544,
+          0.00020958547063987254,
+          0.0008780143262538953
+        ],
+        "test_protein_bootstrap_95": [
+          0.00012805010829102051,
+          0.0008327381168769892
+        ]
+      }
+    },
+    "structure_routed_minus_deepgoplus_control": {
+      "all": {
+        "n": 1278,
+        "mean_delta": 0.019904582026371576,
+        "seed_deltas": [
+          0.01902630123273541,
+          0.021822953084138952,
+          0.018864491762240365
+        ],
+        "test_protein_bootstrap_95": [
+          0.015077165294263391,
+          0.024534048561470827
+        ]
+      },
+      "no_close_hit": {
+        "n": 887,
+        "mean_delta": 0.01966653494978558,
+        "seed_deltas": [
+          0.01854831925537559,
+          0.02220688745415389,
+          0.018244398139827256
+        ],
+        "test_protein_bootstrap_95": [
+          0.013318786008067823,
+          0.026674590386441738
+        ]
+      },
+      "close_hit": {
+        "n": 391,
+        "mean_delta": 0.027417915633047074,
+        "seed_deltas": [
+          0.02743131425068901,
+          0.027880113750356372,
+          0.02694231889809584
+        ],
+        "test_protein_bootstrap_95": [
+          0.020058992199524298,
+          0.03462104921929618
+        ]
+      },
+      "no_detected_hit": {
+        "n": 356,
+        "mean_delta": 0.08577492204253578,
+        "seed_deltas": [
+          0.08709567965758747,
+          0.09231471210798103,
+          0.07791437436203885
+        ],
+        "test_protein_bootstrap_95": [
+          0.07344424540245259,
+          0.09810614145116996
+        ]
+      }
+    }
+  }
+}

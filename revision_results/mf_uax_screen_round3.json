@@ -1,0 +1,80 @@
+{
+  "settings": {
+    "branch": "mf",
+    "variants": [
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "seeds": [
+      0
+    ],
+    "epochs": 8,
+    "patience": 3,
+    "width": 64,
+    "batch_size": 48,
+    "output": "revision_results\\mf_uax_screen_round3.json",
+    "context": ".revision-cache\\deepfri_lm_mf",
+    "motif_readout": true,
+    "evaluate_test": false,
+    "alignments": null,
+    "device": "cuda"
+  },
+  "audit": {
+    "train": {
+      "proteins": 7627,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 7627,
+      "mean_plddt_percentiles": [
+        32.929205894470215,
+        67.82546639442444,
+        78.55114936828613,
+        86.85723543167114,
+        98.43137264251709
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2178,
+      "exact_sequence_exclusions": 1,
+      "unique_sequence_feature_vectors": 2178,
+      "mean_plddt_percentiles": [
+        30.20589053630829,
+        68.90436261892319,
+        79.06788289546967,
+        87.22003400325775,
+        98.20142388343811
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    }
+  },
+  "metrics": [
+    {
+      "variant": "neutral",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.7158828016436757,
+      "validation_fmax": 0.7070888120527792,
+      "valid_threshold": 0.36
+    },
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.717923993772195,
+      "validation_fmax": 0.7083356354111671,
+      "valid_threshold": 0.37
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "best_epoch": 8,
+      "selection_fmax": 0.7170167702784962,
+      "validation_fmax": 0.708814649904598,
+      "valid_threshold": 0.38
+    }
+  ],
+  "aligned_minus_control": {}
+}

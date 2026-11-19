@@ -1,0 +1,27 @@
+{
+  "upstream_commit": "2aaf8509eca8f5ff6263aea5d6ab2ac7a7dcdb2f",
+  "split_audit": {
+    "train": {
+      "proteins": 8400,
+      "exact_sequence_exclusions": 0
+    },
+    "valid": {
+      "proteins": 2397,
+      "exact_sequence_exclusions": 3
+    },
+    "test": {
+      "proteins": 1198,
+      "exact_sequence_exclusions": 2
+    }
+  },
+  "args": {
+    "source": ".revision-cache\\TAWFN",
+    "branch": "bp",
+    "output": "revision_results\\bp_tawfn.csv",
+    "device": "cuda",
+    "epochs": 8,
+    "seed": 0,
+    "width": 32,
+    "batch_size": 32
+  }
+}

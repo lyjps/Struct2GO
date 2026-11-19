@@ -1,0 +1,348 @@
+{
+  "task": "binding",
+  "cohort": {
+    "source_sha256": "3e5d041d145e5a9ebf74d8d437f4ed2b4850af64394d9ae565ac586314b25dd1",
+    "groups": 1577,
+    "counts": {
+      "binding": {
+        "train": 2574,
+        "valid": 147,
+        "test": 262
+      },
+      "active": {
+        "train": 1521,
+        "valid": 32,
+        "test": 50
+      }
+    }
+  },
+  "metrics": {
+    "sequence_0": {
+      "selected_epoch": 5,
+      "validation": {
+        "macro_ap": 0.4618957690136917,
+        "micro_ap": 0.3798497704964148,
+        "auroc": 0.9220070766698697,
+        "recall_top3": 0.2827092138383029,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5066116091635205,
+      "micro_ap": 0.47960550509869776,
+      "auroc": 0.9314480217780574,
+      "recall_top3": 0.2820856710860965,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "sequence_confidence_0": {
+      "selected_epoch": 3,
+      "validation": {
+        "macro_ap": 0.45757782394956686,
+        "micro_ap": 0.3892116087648937,
+        "auroc": 0.9293052223352805,
+        "recall_top3": 0.29718484622045277,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5253119874063079,
+      "micro_ap": 0.5035886872655826,
+      "auroc": 0.9418098563392435,
+      "recall_top3": 0.2829315597182446,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "neutral_0": {
+      "selected_epoch": 4,
+      "validation": {
+        "macro_ap": 0.46525006611509867,
+        "micro_ap": 0.36333870729326423,
+        "auroc": 0.9303155591500921,
+        "recall_top3": 0.2696827375958951,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5407742470346963,
+      "micro_ap": 0.5088490255141442,
+      "auroc": 0.9460521068792745,
+      "recall_top3": 0.29755565331910067,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "aligned_0": {
+      "selected_epoch": 3,
+      "validation": {
+        "macro_ap": 0.465249173866746,
+        "micro_ap": 0.3972384922256502,
+        "auroc": 0.9355538383879781,
+        "recall_top3": 0.28732007002914595,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5338965079138022,
+      "micro_ap": 0.512875691057919,
+      "auroc": 0.94785080499903,
+      "recall_top3": 0.28377420731661746,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "shuffled_0": {
+      "selected_epoch": 2,
+      "validation": {
+        "macro_ap": 0.456236883856114,
+        "micro_ap": 0.3668049924860311,
+        "auroc": 0.9339632977912569,
+        "recall_top3": 0.27100004273973094,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5301600508770423,
+      "micro_ap": 0.5248614826057516,
+      "auroc": 0.9442805917445538,
+      "recall_top3": 0.28400601888152993,
+      "proteins": 262,
+      "positives": 2070
+    }
+  },
+  "paired_macro_ap": {
+    "neutral_minus_sequence": {
+      "macro_ap_delta": 0.034162637871175905,
+      "seed_deltas": [
+        0.034162637871175905
+      ],
+      "bootstrap_95": [
+        0.006848249109643095,
+        0.06243979960870631
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_minus_sequence": {
+      "macro_ap_delta": 0.02728489875028182,
+      "seed_deltas": [
+        0.02728489875028182
+      ],
+      "bootstrap_95": [
+        -0.0012011194297884998,
+        0.05371496899332159
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_minus_neutral": {
+      "macro_ap_delta": -0.006877739120894082,
+      "seed_deltas": [
+        -0.006877739120894082
+      ],
+      "bootstrap_95": [
+        -0.02880254196940395,
+        0.012285075982354472
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_minus_shuffled": {
+      "macro_ap_delta": 0.0037364570367599595,
+      "seed_deltas": [
+        0.0037364570367599595
+      ],
+      "bootstrap_95": [
+        -0.01992224272595014,
+        0.030131854164225206
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "sequence_confidence_minus_sequence": {
+      "macro_ap_delta": 0.01870037824278744,
+      "seed_deltas": [
+        0.01870037824278744
+      ],
+      "bootstrap_95": [
+        -0.007751023265518623,
+        0.040777732993180126
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    }
+  },
+  "selective_precision": {
+    "sequence_0": {
+      "test_candidates": 786,
+      "results": {
+        "0.25": {
+          "precision": {
+            "score_only": 0.8673469387755102,
+            "real_confidence": 0.9081632653061225,
+            "shuffled_confidence": 0.8673469387755102
+          },
+          "real_minus_score_only": {
+            "delta": 0.04081632653061229,
+            "bootstrap_95": [
+              -0.0392967423189749,
+              0.07637469675806802
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.04081632653061229,
+            "bootstrap_95": [
+              -0.06272945804195804,
+              0.0789096829880728
+            ]
+          }
+        },
+        "0.5": {
+          "precision": {
+            "score_only": 0.7913486005089059,
+            "real_confidence": 0.7913486005089059,
+            "shuffled_confidence": 0.7837150127226463
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              -0.02405171167076418,
+              0.013157894736842035
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.007633587786259555,
+            "bootstrap_95": [
+              -0.017293102875660143,
+              0.027616869918699157
+            ]
+          }
+        },
+        "0.75": {
+          "precision": {
+            "score_only": 0.6502546689303905,
+            "real_confidence": 0.6536502546689303,
+            "shuffled_confidence": 0.6519524617996605
+          },
+          "real_minus_score_only": {
+            "delta": 0.003395585738539819,
+            "bootstrap_95": [
+              -0.012284655799541914,
+              0.011038799656933414
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.001697792869269854,
+            "bootstrap_95": [
+              -0.012345679012345682,
+              0.014787364095094407
+            ]
+          }
+        },
+        "1.0": {
+          "precision": {
+            "score_only": 0.544529262086514,
+            "real_confidence": 0.544529262086514,
+            "shuffled_confidence": 0.544529262086514
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "aligned_0": {
+      "test_candidates": 786,
+      "results": {
+        "0.25": {
+          "precision": {
+            "score_only": 0.7755102040816326,
+            "real_confidence": 0.7908163265306123,
+            "shuffled_confidence": 0.7959183673469388
+          },
+          "real_minus_score_only": {
+            "delta": 0.015306122448979664,
+            "bootstrap_95": [
+              -0.04731543624161073,
+              0.039460784313725454
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.005102040816326481,
+            "bootstrap_95": [
+              -0.06382978723404253,
+              0.026510040921913815
+            ]
+          }
+        },
+        "0.5": {
+          "precision": {
+            "score_only": 0.7633587786259542,
+            "real_confidence": 0.7404580152671756,
+            "shuffled_confidence": 0.7480916030534351
+          },
+          "real_minus_score_only": {
+            "delta": -0.022900763358778664,
+            "bootstrap_95": [
+              -0.04546492238059316,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.007633587786259555,
+            "bootstrap_95": [
+              -0.039245036572622814,
+              0.007936507936507908
+            ]
+          }
+        },
+        "0.75": {
+          "precision": {
+            "score_only": 0.6604414261460102,
+            "real_confidence": 0.6553480475382003,
+            "shuffled_confidence": 0.6638370118845501
+          },
+          "real_minus_score_only": {
+            "delta": -0.005093378607809895,
+            "bootstrap_95": [
+              -0.019668755075994856,
+              0.0022260307875067993
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.008488964346349825,
+            "bootstrap_95": [
+              -0.021047323412890152,
+              0.0
+            ]
+          }
+        },
+        "1.0": {
+          "precision": {
+            "score_only": 0.5458015267175572,
+            "real_confidence": 0.5458015267175572,
+            "shuffled_confidence": 0.5458015267175572
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+Official DeepFRI inference parity, maximum absolute error 3.91155e-08
+bp train 8400 0
+bp valid 2397 3
+bp test 1198 2
+train cached official LSTM for 8400 proteins
+valid cached official LSTM for 2397 proteins
+test cached official LSTM for 1198 proteins
+Full DeepFRI bp epoch 1 validation objective 0.239974
+{"valid_fmax": 0.4081371675106036, "valid_threshold": 0.26, "test_f1_at_valid_threshold": 0.4014665596798832, "test_fmax": 0.4016593693138305, "test_micro_aupr": 0.34109747647006916}

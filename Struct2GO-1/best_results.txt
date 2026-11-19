@@ -1,0 +1,506 @@
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.82
+F-score: 0.7085002567156464
+Recall: 0.7057616032287245
+Precision: 0.7112602472668111
+AUC: 0.9747567532434575
+AUPR: 0.8060690942561692
+Thing: mf
+Network File: temp_network
+Best Validation Results
+Threshold: 0.87
+F-score: 0.6912025123820592
+Recall: 0.6953099993041542
+Precision: 0.6871432697465238
+AUC: 0.9696342926313096
+AUPR: 0.7643485096173708
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.66
+F-score: 0.5550554683539259
+Recall: 0.5741125213339887
+Precision: 0.5372229261512573
+AUC: 0.9304491171830754
+AUPR: 0.6295469628683841
+Thing: bp CHECK IF THIS IS ACTUALLY 20 EPOCHS
+Network File: temp_network
+Best Validation Results
+Threshold: 0.77
+F-score: 0.4985799750983744
+Recall: 0.5296950804356255
+Precision: 0.4709175523432485
+AUC: 0.9035083301695632
+AUPR: 0.5357203111559139
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.79
+F-score: 0.6355423632832542
+Recall: 0.6604866103167707
+Precision: 0.612413661766537
+AUC: 0.9523665367660751
+AUPR: 0.7194103722111291
+
+Epoch 50:
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.86
+F-score: 0.675010272926186
+Recall: 0.7591239434394502
+Precision: 0.6076774230265779
+AUC: 0.9712448926076503
+AUPR: 0.7548938243222652
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.92
+F-score: 0.7405306853328992
+Recall: 0.791364553614919
+Precision: 0.6958333333333333
+AUC: 0.9851619052725608
+AUPR: 0.8298905845886309
+
+15 Epochs:
+Thing: mf
+Network File: temp_network
+Best Validation Results
+Threshold: 0.88
+F-score: 0.700731730114433
+Recall: 0.7303388769048779
+Precision: 0.6734315449074133
+AUC: 0.9746168493701063
+AUPR: 0.7842644915101742
+Thing: mf
+Network File: temp_network
+Best Validation Results
+Threshold: 0.87
+F-score: 0.7106050708156194
+Recall: 0.7228654930067497
+Precision: 0.6987536070061681
+AUC: 0.9763718770347837
+AUPR: 0.7871009571629894
+Thing: bp
+Network File: temp_network
+Best Validation Results
+Threshold: 0.75
+F-score: 0.5339166605852733
+Recall: 0.5584436797962928
+Precision: 0.5114534660995859
+AUC: 0.9213492846821371
+AUPR: 0.6001552579017098
+Thing: bp
+Network File: temp_network
+Best Validation Results
+Threshold: 0.73
+F-score: 0.5315617897005961
+Recall: 0.5672917512647735
+Precision: 0.5000659382064808
+AUC: 0.9228393059317256
+AUPR: 0.5891395196422582
+
+20 epcohs:
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.85
+F-score: 0.7311739876586253
+Recall: 0.7515482569062696
+Precision: 0.7118752430480032
+AUC: 0.9809612474468005
+AUPR: 0.8200479931092373
+Thing: mf
+Network File: temp_network
+Best Validation Results
+Threshold: 0.9
+F-score: 0.7305387980897065
+Recall: 0.7360517709275625
+Precision: 0.7251077948162519
+AUC: 0.9804139773876166
+AUPR: 0.8142957145186982
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.66
+F-score: 0.5507694956938708
+Recall: 0.5712684983619771
+Precision: 0.5316906761539544
+AUC: 0.9300039558470687
+AUPR: 0.6144109578987407
+
+bp
+########valid metric###########
+epoch15,lossEpoch Loss: 299.9517477416992,testloss:295.1876329243978,t:0.73,f_score0.5323437945791726, auc0.9225277322922653, recall0.5696793261054747, precision0.49960103997365257,aupr0.5866804519731292
+
+bp temp_network 30 Epochs
+########valid metric###########
+epoch30,lossEpoch Loss: 289.78241686503094,testloss:283.20586199442545,t:0.73,f_score0.5931216740746701, auc0.9483057881570331, recall0.6413798472806989, precision0.551617337553978,aupr0.6691359050827315
+
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.65
+F-score: 0.5954401798086947
+Recall: 0.6064348500438129
+Precision: 0.5848370774193263
+AUC: 0.9479169558032368
+AUPR: 0.6749616306653865
+
+15 epochs
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.67
+F-score: 0.5264184780553112
+Recall: 0.563046325668872
+Precision: 0.4942650576576456
+AUC: 0.9183925335503746
+AUPR: 0.5848128304520674
+Thing: bp
+Network File: temp_network
+Best Validation Results
+Threshold: 0.73
+F-score: 0.5294512553798668
+Recall: 0.5640431839623362
+Precision: 0.498857092708481
+AUC: 0.9214890542433982
+AUPR: 0.5836564232559367
+
+20 epochs
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.75
+F-score: 0.649889520532433
+Recall: 0.6743739631882455
+Precision: 0.6271206984577072
+AUC: 0.9583050560283127
+AUPR: 0.736147055418324
+Thing: cc
+Network File: temp_network
+Best Validation Results
+Threshold: 0.83
+F-score: 0.6551735617897727
+Recall: 0.699569476261948
+Precision: 0.6160762734267389
+AUC: 0.9620843159360932
+AUPR: 0.7291826781306814
+30:
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.74
+F-score: 0.6743954608993448
+Recall: 0.694576980804171
+Precision: 0.6553536091349181
+AUC: 0.9655570463290764
+AUPR: 0.7686992786063231
+Thing: cc
+Network File: temp_network
+Best Validation Results
+Threshold: 0.82
+F-score: 0.6705399788529551
+Recall: 0.7263962398293704
+Precision: 0.6226604821235103
+AUC: 0.9672458393176115
+AUPR: 0.7520958194222929
+35:
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.89
+F-score: 0.7548108538975057
+Recall: 0.7907104585623825
+Precision: 0.7220294827805313
+AUC: 0.9854073682544416
+AUPR: 0.8498576231135264
+Thing: mf
+Network File: temp_network
+Best Validation Results
+Threshold: 0.89
+F-score: 0.7229671151859197
+Recall: 0.8472061791107091
+Precision: 0.6305061573676088
+AUC: 0.9841147713134427
+AUPR: 0.8220649659974673
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.65
+F-score: 0.6147807020871425
+Recall: 0.6185131698261833
+Precision: 0.6110930118911875
+AUC: 0.9546183415068148
+AUPR: 0.6956874771816168
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.69
+F-score: 0.5038630743573523
+Recall: 0.5350167466086972
+Precision: 0.4761378796894827
+AUC: 0.9039458450869668
+AUPR: 0.5561014439146554
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.68
+F-score: 0.4723561220411873
+Recall: 0.49531982436361477
+Precision: 0.4514273353477588
+AUC: 0.8748011424494164
+AUPR: 0.5061601203307542
+
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.64
+F-score: 0.48781763719490345
+Recall: 0.5049026879487332
+Precision: 0.471850999528655
+AUC: 0.8768336271093553
+AUPR: 0.5237167193879878
+Network File: temp_network
+Best Validation Results
+Threshold: 0.73
+F-score: 0.475795420348535
+Recall: 0.515983801103661
+Precision: 0.44141497461928936
+AUC: 0.8750258262602024
+AUPR: 0.5057231271858869
+
+
+#21st Dec 40 Epoch
+Thing: mf
+Network File: temp_network
+Best Validation Results
+Threshold: 0.93
+F-score: 0.656180792036768
+Recall: 0.6774264922804603
+Precision: 0.6362271992611406
+AUC: 0.9572354665606765
+AUPR: 0.7126821132370238
+Thing: cc
+Network File: temp_network
+Best Validation Results
+Threshold: 0.85
+F-score: 0.6011667628284383
+Recall: 0.6508745488438504
+Precision: 0.5585127201565557
+AUC: 0.9341878053801711
+AUPR: 0.6562628610863406
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.76
+F-score: 0.6315941248846508
+Recall: 0.6515091421092294
+Precision: 0.6128605006902212
+AUC: 0.9394833784266587
+AUPR: 0.705426624925565
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.91
+F-score: 0.6766896958670371
+Recall: 0.6766397875897335
+Precision: 0.6767396115072535
+AUC: 0.9588892915815846
+AUPR: 0.7387484987435682
+
+22nd Dec
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.83
+F-score: 0.680397586786668
+Recall: 0.6765168649818074
+Precision: 0.6843230876355317
+AUC: 0.9598079979869313
+AUPR: 0.7304141791254615
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.84
+F-score: 0.6751254664779308
+Recall: 0.6449011702232275
+Precision: 0.7083220824107577
+AUC: 0.9585478781408174
+AUPR: 0.741306311143584
+
+
+#Best
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.83
+F-score: 0.6722420242578435
+Recall: 0.6560871275444979
+Precision: 0.6892125719893598
+AUC: 0.9582575939472358
+AUPR: 0.7593908548623571
+Thing: mf
+Network File: network_a
+Best Validation Results
+Threshold: 0.92
+F-score: 0.670714259054207
+Recall: 0.6626757793293343
+Precision: 0.6789501523891086
+AUC: 0.9579329420463918
+AUPR: 0.7237964731611277
+Thing: mf
+Network File: network
+Best Validation Results
+Threshold: 0.86
+F-score: 0.6845076101199475
+Recall: 0.6678139443406431
+Precision: 0.7020572728212551
+AUC: 0.9601751524963891
+AUPR: 0.7456209025611418
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.74
+F-score: 0.6308556793639265
+Recall: 0.6545631221988657
+Precision: 0.6088055186660765
+AUC: 0.9392597461668735
+AUPR: 0.6929994242733708
+Thing: cc
+Network File: network_a
+Best Validation Results
+Threshold: 0.82
+F-score: 0.6153387582342246
+Recall: 0.6140879704914132
+Precision: 0.6165946516397522
+AUC: 0.9363298434867457
+AUPR: 0.6505019895011313
+Thing: cc
+Network File: network_b
+Best Validation Results
+Threshold: 0.76
+F-score: 0.6312661938155881
+Recall: 0.6256891286241225
+Precision: 0.6369435752498234
+AUC: 0.9400929142864508
+AUPR: 0.6924554620324379
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.64
+F-score: 0.48877758119150044
+Recall: 0.5153310983207737
+Precision: 0.4648264235012343
+AUC: 0.8780757217569966
+AUPR: 0.5197449081777272
+Thing: bp
+Network File: network_a
+Best Validation Results
+Threshold: 0.72
+F-score: 0.4785944592486904
+Recall: 0.5075357503115172
+Precision: 0.45277575597168
+AUC: 0.8773657031868445
+AUPR: 0.5008382400661272
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.73
+F-score: 0.6288306491551277
+Recall: 0.6295165192559394
+Precision: 0.6281462719645401
+AUC: 0.9390463992265605
+AUPR: 0.6912477517630797
+Thing: cc
+Network File: temp_network
+Best Validation Results
+Threshold: 0.81
+F-score: 0.6194180017026546
+Recall: 0.6348708999325745
+Precision: 0.6046994824524952
+AUC: 0.9388303855837967
+AUPR: 0.6665528627950432
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.66
+F-score: 0.48837799063863085
+Recall: 0.4999332463062956
+Precision: 0.477344834423954
+AUC: 0.8786856397315703
+AUPR: 0.5159556149221445
+Thing: bp
+Network File: temp_network
+Best Validation Results
+Threshold: 0.72
+F-score: 0.47945135752364343
+Recall: 0.5239794101940307
+Precision: 0.44189857819312306
+AUC: 0.876999774096559
+AUPR: 0.5066848770549027
+Thing: bp
+Network File: temp_network
+Best Validation Results
+Threshold: 0.73
+F-score: 0.48050556453409626
+Recall: 0.5038939654660891
+Precision: 0.45919201887136785
+AUC: 0.8787367382606338
+AUPR: 0.5034380203599328
+Thing: cc
+Network File: network
+Best Validation Results
+Threshold: 0.77
+F-score: 0.6313214974762731
+Recall: 0.6424265259984928
+Precision: 0.6205938697318008
+AUC: 0.9389853627915867
+AUPR: 0.6803703534447754
+Thing: cc
+Network File: network_a
+Best Validation Results
+Threshold: 0.83
+F-score: 0.6200585791680226
+Recall: 0.6423273708007774
+Precision: 0.5992821195973949
+AUC: 0.9386434516751225
+AUPR: 0.6632282912930578
+Thing: cc
+Network File: network_b
+Best Validation Results
+Threshold: 0.77
+F-score: 0.6287789786967418
+Recall: 0.6368341728473407
+Precision: 0.6209250164352836
+AUC: 0.9399665818377839
+AUPR: 0.6847440717038753
+Thing: bp
+Network File: network
+Best Validation Results
+Threshold: 0.67
+F-score: 0.49700975303045813
+Recall: 0.5042128997804545
+Precision: 0.4900095147478592
+AUC: 0.8801494325941388
+AUPR: 0.5270942709192278
+Thing: bp
+Network File: network_a
+Best Validation Results
+Threshold: 0.74
+F-score: 0.47413000338802574
+Recall: 0.5086038094107874
+Precision: 0.44403289516285693
+AUC: 0.875172847870459
+AUPR: 0.49948206502542764
+Thing: bp
+Network File: network_b
+Best Validation Results
+Threshold: 0.65
+F-score: 0.4916518497583383
+Recall: 0.509657034355901
+Precision: 0.47487543106724994
+AUC: 0.8791637011411346
+AUPR: 0.5237887469530076

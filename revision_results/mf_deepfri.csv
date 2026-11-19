@@ -1,0 +1,2 @@
+branch,variant,seed,best_epoch,valid_fmax,valid_threshold,test_f1_at_valid_threshold,test_fmax,test_fmax_threshold,test_micro_aupr
+mf,deepfri_onehot_compact,0,8,0.4866201200174027,0.3,0.486323309880831,0.48666740467091274,0.32,0.39218364254365673

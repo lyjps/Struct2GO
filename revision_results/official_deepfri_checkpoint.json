@@ -1,0 +1,8 @@
+{
+  "example": "1S3P-A",
+  "top_go": "GO:0005509",
+  "top_score": 0.9963474869728088,
+  "output_terms": 942,
+  "tensorflow": "2.16.1",
+  "checkpoint_sha256": "64efbcd4933a4387e26ffe66d7064fcd9b114442ba97dcdeeffe36078ec52f03"
+}

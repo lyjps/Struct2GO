@@ -1,0 +1,12 @@
+{
+  "branch": "mf",
+  "variant": "static_fusion",
+  "seed": 0,
+  "best_epoch": 13,
+  "valid_fmax": 0.49913276369356485,
+  "valid_threshold": 0.33,
+  "test_fmax": 0.4980394074819272,
+  "test_f1_at_valid_threshold": 0.4980394074819272,
+  "test_micro_aupr": 0.4757474743101593,
+  "test_micro_roc_auc": 0.8666948170572794
+}

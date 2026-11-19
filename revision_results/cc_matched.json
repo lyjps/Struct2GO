@@ -1,0 +1,72 @@
+{
+  "branch": "cc",
+  "data_dir": ".",
+  "output": "revision_results\\cc_matched.csv",
+  "variants": [
+    "sequence",
+    "structure",
+    "gcn_static",
+    "gcn_confidence",
+    "gat_static",
+    "gat_confidence",
+    "plddt_gat_static",
+    "plddt_gat_confidence",
+    "deepfri_onehot_compact"
+  ],
+  "seeds": [
+    0
+  ],
+  "epochs": 8,
+  "patience": 3,
+  "batch_size": 96,
+  "width": 48,
+  "device": "cuda",
+  "split_audit": {
+    "train": {
+      "proteins": 8962,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 8962,
+      "mean_plddt_percentiles": [
+        26.18144154548645,
+        67.355377972126,
+        77.94769406318665,
+        86.61873042583466,
+        98.58721494674683
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2552,
+      "exact_sequence_exclusions": 8,
+      "unique_sequence_feature_vectors": 2552,
+      "mean_plddt_percentiles": [
+        31.466105580329895,
+        68.191859126091,
+        78.29306125640869,
+        86.70265525579453,
+        98.35022687911987
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    },
+    "test": {
+      "proteins": 1278,
+      "exact_sequence_exclusions": 3,
+      "unique_sequence_feature_vectors": 1278,
+      "mean_plddt_percentiles": [
+        29.681187868118286,
+        68.56646090745926,
+        78.43458652496338,
+        86.34869903326035,
+        98.18755388259888
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0,
+        "valid": 0
+      }
+    }
+  },
+  "torch": "2.3.0+cu118",
+  "dgl": "2.2.1+cu118"
+}

@@ -1,0 +1,107 @@
+{
+  "settings": {
+    "branch": "cc",
+    "variants": [
+      "sequence",
+      "local",
+      "random_geometry",
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "cache": ".revision-cache\\uax_residues",
+    "temporal_labels": null,
+    "temporal_cache": null,
+    "pretrained_structure": false,
+    "global_skip": false,
+    "evaluate_test": false,
+    "output": "revision_results\\cc_uax_residue_validation.json",
+    "epochs": 12,
+    "patience": 4,
+    "seeds": [
+      0
+    ],
+    "width": 96,
+    "token_budget": 12000,
+    "lr": [
+      0.001
+    ],
+    "strength": [
+      0.7
+    ],
+    "device": "cuda"
+  },
+  "counts": {
+    "train": {
+      "included": 7679,
+      "available": 8962
+    },
+    "valid": {
+      "included": 2194,
+      "available": 2552
+    }
+  },
+  "metrics": [
+    {
+      "variant": "sequence",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 11,
+      "last_epoch": 12,
+      "validation_fmax": 0.7460419576099216,
+      "validation_threshold": 0.44
+    },
+    {
+      "variant": "local",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 11,
+      "last_epoch": 12,
+      "validation_fmax": 0.7444652408890521,
+      "validation_threshold": 0.43
+    },
+    {
+      "variant": "random_geometry",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 11,
+      "last_epoch": 12,
+      "validation_fmax": 0.7474588645316325,
+      "validation_threshold": 0.45
+    },
+    {
+      "variant": "neutral",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 11,
+      "last_epoch": 12,
+      "validation_fmax": 0.7447703586286069,
+      "validation_threshold": 0.46
+    },
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.7,
+      "best_epoch": 10,
+      "last_epoch": 12,
+      "validation_fmax": 0.7460117821539539,
+      "validation_threshold": 0.43
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.7,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.7465199619788984,
+      "validation_threshold": 0.38
+    }
+  ],
+  "aligned_minus_control": {}
+}

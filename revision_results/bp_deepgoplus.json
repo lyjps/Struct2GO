@@ -1,0 +1,18 @@
+{
+  "exact_sequence_exclusions": {
+    "train": 0,
+    "valid": 3,
+    "test": 2
+  },
+  "args": {
+    "branch": "bp",
+    "diamond": ".revision-cache\\diamond\\diamond.exe",
+    "work_dir": ".revision-cache\\diamond_bp",
+    "output": "revision_results\\bp_deepgoplus.csv",
+    "epochs": 8,
+    "seeds": [
+      0
+    ],
+    "device": "cuda"
+  }
+}

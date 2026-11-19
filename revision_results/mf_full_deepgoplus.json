@@ -1,0 +1,42 @@
+{
+  "branch": "mf",
+  "settings": {
+    "branch": "mf",
+    "output": "revision_results\\mf_full_deepgoplus.json",
+    "epochs": 12,
+    "seed": 0,
+    "diamond": ".revision-cache\\diamond\\diamond.exe"
+  },
+  "best_epoch": 5,
+  "parameters": 13943057,
+  "bf16": true,
+  "diamond_weight": 0.6000000000000001,
+  "counts": {
+    "train": 7627,
+    "valid": 2178,
+    "test": 1085
+  },
+  "metrics": {
+    "full_cnn": {
+      "valid_fmax": 0.6135839128687841,
+      "valid_threshold": 0.28,
+      "test_f1_at_valid_threshold": 0.6138036570237682,
+      "test_fmax": 0.6143982677828768,
+      "test_micro_aupr": 0.658368131935966
+    },
+    "diamond": {
+      "valid_fmax": 0.7340116144431386,
+      "valid_threshold": 0.54,
+      "test_f1_at_valid_threshold": 0.7407108899527075,
+      "test_fmax": 0.7412788973391318,
+      "test_micro_aupr": 0.7300493856735527
+    },
+    "full_deepgoplus": {
+      "valid_fmax": 0.7740306830093492,
+      "valid_threshold": 0.33,
+      "test_f1_at_valid_threshold": 0.780279374732554,
+      "test_fmax": 0.7807232430423786,
+      "test_micro_aupr": 0.8133130870308406
+    }
+  }
+}

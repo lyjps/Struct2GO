@@ -1,0 +1,61 @@
+{
+  "method": "Largest MFO validation Fmax gain over the stronger of neutral and shuffled controls",
+  "selected": {
+    "stage": "gearnet",
+    "aligned": 0.7577379876759682,
+    "neutral": 0.7562669943543016,
+    "shuffled": 0.7556208454867761,
+    "margin": 0.0014709933216666693,
+    "strength": 0.2,
+    "backbone": "gearnet",
+    "global_skip": true,
+    "source": "mf_uax_residue_gearnet_validation.json"
+  },
+  "candidates": [
+    {
+      "stage": "pretrained",
+      "aligned": 0.741700607690034,
+      "neutral": 0.7475498475398862,
+      "shuffled": 0.7450314640197382,
+      "margin": -0.005849239849852195,
+      "strength": 0.7,
+      "backbone": "saprot",
+      "global_skip": false,
+      "source": "mf_uax_residue_pretrained_validation.json"
+    },
+    {
+      "stage": "soft_confidence",
+      "aligned": 0.7447916305830151,
+      "neutral": 0.7475498475398862,
+      "shuffled": 0.7446911323441707,
+      "margin": -0.0027582169568710624,
+      "strength": 0.2,
+      "backbone": "saprot",
+      "global_skip": false,
+      "source": "mf_uax_residue_soft_confidence_validation.json"
+    },
+    {
+      "stage": "global_skip",
+      "aligned": 0.7460624893953959,
+      "neutral": 0.7471691776434689,
+      "shuffled": 0.74771918319133,
+      "margin": -0.0016566937959341388,
+      "strength": 0.2,
+      "backbone": "saprot",
+      "global_skip": true,
+      "source": "mf_uax_residue_global_skip_validation.json"
+    },
+    {
+      "stage": "gearnet",
+      "aligned": 0.7577379876759682,
+      "neutral": 0.7562669943543016,
+      "shuffled": 0.7556208454867761,
+      "margin": 0.0014709933216666693,
+      "strength": 0.2,
+      "backbone": "gearnet",
+      "global_skip": true,
+      "source": "mf_uax_residue_gearnet_validation.json"
+    }
+  ],
+  "temporal_seed": 1
+}

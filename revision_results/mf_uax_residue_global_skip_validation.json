@@ -1,0 +1,86 @@
+{
+  "settings": {
+    "branch": "mf",
+    "variants": [
+      "sequence",
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "cache": ".revision-cache\\uax_residues",
+    "temporal_labels": null,
+    "temporal_cache": null,
+    "pretrained_structure": true,
+    "structure_backbone": "saprot",
+    "global_skip": true,
+    "evaluate_test": false,
+    "output": "revision_results\\mf_uax_residue_global_skip_validation.json",
+    "epochs": 16,
+    "patience": 5,
+    "seeds": [
+      0
+    ],
+    "width": 96,
+    "token_budget": 12000,
+    "lr": [
+      0.001
+    ],
+    "strength": [
+      0.2
+    ],
+    "device": "cuda"
+  },
+  "counts": {
+    "train": {
+      "included": 6516,
+      "available": 7627
+    },
+    "valid": {
+      "included": 1860,
+      "available": 2178
+    }
+  },
+  "metrics": [
+    {
+      "variant": "sequence",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 12,
+      "last_epoch": 16,
+      "validation_fmax": 0.7463892263878397,
+      "validation_threshold": 0.44
+    },
+    {
+      "variant": "neutral",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 15,
+      "last_epoch": 16,
+      "validation_fmax": 0.7471691776434689,
+      "validation_threshold": 0.39
+    },
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.2,
+      "best_epoch": 16,
+      "last_epoch": 16,
+      "validation_fmax": 0.7460624893953959,
+      "validation_threshold": 0.48
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.2,
+      "best_epoch": 13,
+      "last_epoch": 16,
+      "validation_fmax": 0.74771918319133,
+      "validation_threshold": 0.42
+    }
+  ],
+  "aligned_minus_control": {}
+}

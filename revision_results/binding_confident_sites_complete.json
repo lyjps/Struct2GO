@@ -1,0 +1,955 @@
+{
+  "task": "binding",
+  "cohort": {
+    "source_sha256": "3e5d041d145e5a9ebf74d8d437f4ed2b4850af64394d9ae565ac586314b25dd1",
+    "groups": 1577,
+    "counts": {
+      "binding": {
+        "train": 2574,
+        "valid": 147,
+        "test": 262
+      },
+      "active": {
+        "train": 1521,
+        "valid": 32,
+        "test": 50
+      }
+    }
+  },
+  "metrics": {
+    "sequence_0": {
+      "selected_epoch": 5,
+      "validation": {
+        "macro_ap": 0.4618957690136917,
+        "micro_ap": 0.3798497704964148,
+        "auroc": 0.9220070766698697,
+        "recall_top3": 0.2827092138383029,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5066116091635205,
+      "micro_ap": 0.47960550509869776,
+      "auroc": 0.9314480217780574,
+      "recall_top3": 0.2820856710860965,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "neutral_0": {
+      "selected_epoch": 4,
+      "validation": {
+        "macro_ap": 0.46525006611509867,
+        "micro_ap": 0.36333870729326423,
+        "auroc": 0.9303155591500921,
+        "recall_top3": 0.2696827375958951,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5407742470346963,
+      "micro_ap": 0.5088490255141442,
+      "auroc": 0.9460521068792745,
+      "recall_top3": 0.29755565331910067,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "aligned_0": {
+      "selected_epoch": 3,
+      "validation": {
+        "macro_ap": 0.465249173866746,
+        "micro_ap": 0.3972384922256502,
+        "auroc": 0.9355538383879781,
+        "recall_top3": 0.28732007002914595,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5338965079138022,
+      "micro_ap": 0.512875691057919,
+      "auroc": 0.94785080499903,
+      "recall_top3": 0.28377420731661746,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "shuffled_0": {
+      "selected_epoch": 2,
+      "validation": {
+        "macro_ap": 0.456236883856114,
+        "micro_ap": 0.3668049924860311,
+        "auroc": 0.9339632977912569,
+        "recall_top3": 0.27100004273973094,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5301600508770423,
+      "micro_ap": 0.5248614826057516,
+      "auroc": 0.9442805917445538,
+      "recall_top3": 0.28400601888152993,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "sequence_1": {
+      "selected_epoch": 3,
+      "validation": {
+        "macro_ap": 0.4651171678764567,
+        "micro_ap": 0.38331617410466234,
+        "auroc": 0.9303614007920232,
+        "recall_top3": 0.29909162236192277,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5362083251854486,
+      "micro_ap": 0.4953901333826497,
+      "auroc": 0.9400039771610142,
+      "recall_top3": 0.30176979159812456,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "neutral_1": {
+      "selected_epoch": 3,
+      "validation": {
+        "macro_ap": 0.4870976940658968,
+        "micro_ap": 0.38684072779444045,
+        "auroc": 0.9343519529468237,
+        "recall_top3": 0.3001734581376361,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5524950394518268,
+      "micro_ap": 0.5366017898749651,
+      "auroc": 0.9493525461615909,
+      "recall_top3": 0.2926835017788153,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "aligned_1": {
+      "selected_epoch": 2,
+      "validation": {
+        "macro_ap": 0.48303499012627343,
+        "micro_ap": 0.4307026859210545,
+        "auroc": 0.9433085871516027,
+        "recall_top3": 0.27923685505817586,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5555277202440736,
+      "micro_ap": 0.5216159750001922,
+      "auroc": 0.951847630131943,
+      "recall_top3": 0.30460534639879633,
+      "proteins": 262,
+      "positives": 2070
+    },
+    "shuffled_1": {
+      "selected_epoch": 2,
+      "validation": {
+        "macro_ap": 0.4741746423870169,
+        "micro_ap": 0.4227108472681176,
+        "auroc": 0.9416914954061059,
+        "recall_top3": 0.2843834375006767,
+        "proteins": 147,
+        "positives": 940
+      },
+      "macro_ap": 0.5393001469399803,
+      "micro_ap": 0.5135237420293681,
+      "auroc": 0.9493459536279389,
+      "recall_top3": 0.2884159502217191,
+      "proteins": 262,
+      "positives": 2070
+    }
+  },
+  "paired_macro_ap": {
+    "neutral_minus_sequence": {
+      "macro_ap_delta": 0.02522467606877703,
+      "seed_deltas": [
+        0.034162637871175905,
+        0.016286714266378163
+      ],
+      "bootstrap_95": [
+        0.005927014233940351,
+        0.045562434715991126
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_minus_sequence": {
+      "macro_ap_delta": 0.023302146904453383,
+      "seed_deltas": [
+        0.02728489875028182,
+        0.01931939505862495
+      ],
+      "bootstrap_95": [
+        0.0009896610973228177,
+        0.04415271245767653
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_minus_neutral": {
+      "macro_ap_delta": -0.0019225291643236487,
+      "seed_deltas": [
+        -0.006877739120894082,
+        0.0030326807922467845
+      ],
+      "bootstrap_95": [
+        -0.015111567245436917,
+        0.00903939119975599
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_minus_shuffled": {
+      "macro_ap_delta": 0.009982015170426628,
+      "seed_deltas": [
+        0.0037364570367599595,
+        0.0162275733040933
+      ],
+      "bootstrap_95": [
+        -0.00040352640225857565,
+        0.023076768228856383
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    }
+  },
+  "selective_precision": {
+    "sequence_0": {
+      "test_candidates": 786,
+      "results": {
+        "0.25": {
+          "precision": {
+            "score_only": 0.8673469387755102,
+            "real_confidence": 0.9081632653061225,
+            "shuffled_confidence": 0.8673469387755102
+          },
+          "real_minus_score_only": {
+            "delta": 0.04081632653061229,
+            "bootstrap_95": [
+              -0.0392967423189749,
+              0.07637469675806802
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.04081632653061229,
+            "bootstrap_95": [
+              -0.06272945804195804,
+              0.0789096829880728
+            ]
+          }
+        },
+        "0.5": {
+          "precision": {
+            "score_only": 0.7913486005089059,
+            "real_confidence": 0.7913486005089059,
+            "shuffled_confidence": 0.7837150127226463
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              -0.02405171167076418,
+              0.013157894736842035
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.007633587786259555,
+            "bootstrap_95": [
+              -0.017293102875660143,
+              0.027616869918699157
+            ]
+          }
+        },
+        "0.75": {
+          "precision": {
+            "score_only": 0.6502546689303905,
+            "real_confidence": 0.6536502546689303,
+            "shuffled_confidence": 0.6519524617996605
+          },
+          "real_minus_score_only": {
+            "delta": 0.003395585738539819,
+            "bootstrap_95": [
+              -0.012284655799541914,
+              0.011038799656933414
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.001697792869269854,
+            "bootstrap_95": [
+              -0.012345679012345682,
+              0.014787364095094407
+            ]
+          }
+        },
+        "1.0": {
+          "precision": {
+            "score_only": 0.544529262086514,
+            "real_confidence": 0.544529262086514,
+            "shuffled_confidence": 0.544529262086514
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "aligned_0": {
+      "test_candidates": 786,
+      "results": {
+        "0.25": {
+          "precision": {
+            "score_only": 0.7755102040816326,
+            "real_confidence": 0.7908163265306123,
+            "shuffled_confidence": 0.7959183673469388
+          },
+          "real_minus_score_only": {
+            "delta": 0.015306122448979664,
+            "bootstrap_95": [
+              -0.04731543624161073,
+              0.039460784313725454
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.005102040816326481,
+            "bootstrap_95": [
+              -0.06382978723404253,
+              0.026510040921913815
+            ]
+          }
+        },
+        "0.5": {
+          "precision": {
+            "score_only": 0.7633587786259542,
+            "real_confidence": 0.7404580152671756,
+            "shuffled_confidence": 0.7480916030534351
+          },
+          "real_minus_score_only": {
+            "delta": -0.022900763358778664,
+            "bootstrap_95": [
+              -0.04546492238059316,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.007633587786259555,
+            "bootstrap_95": [
+              -0.039245036572622814,
+              0.007936507936507908
+            ]
+          }
+        },
+        "0.75": {
+          "precision": {
+            "score_only": 0.6604414261460102,
+            "real_confidence": 0.6553480475382003,
+            "shuffled_confidence": 0.6638370118845501
+          },
+          "real_minus_score_only": {
+            "delta": -0.005093378607809895,
+            "bootstrap_95": [
+              -0.019668755075994856,
+              0.0022260307875067993
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.008488964346349825,
+            "bootstrap_95": [
+              -0.021047323412890152,
+              0.0
+            ]
+          }
+        },
+        "1.0": {
+          "precision": {
+            "score_only": 0.5458015267175572,
+            "real_confidence": 0.5458015267175572,
+            "shuffled_confidence": 0.5458015267175572
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "sequence_1": {
+      "test_candidates": 786,
+      "results": {
+        "0.25": {
+          "precision": {
+            "score_only": 0.8163265306122449,
+            "real_confidence": 0.8112244897959183,
+            "shuffled_confidence": 0.8163265306122449
+          },
+          "real_minus_score_only": {
+            "delta": -0.005102040816326592,
+            "bootstrap_95": [
+              -0.04387823486957415,
+              0.04166666666666663
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.005102040816326592,
+            "bootstrap_95": [
+              -0.07072881073422788,
+              0.07760795166469486
+            ]
+          }
+        },
+        "0.5": {
+          "precision": {
+            "score_only": 0.7531806615776081,
+            "real_confidence": 0.7557251908396947,
+            "shuffled_confidence": 0.7684478371501272
+          },
+          "real_minus_score_only": {
+            "delta": 0.0025445292620865922,
+            "bootstrap_95": [
+              -0.025758650607328796,
+              0.015356616563513146
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.012722646310432517,
+            "bootstrap_95": [
+              -0.03164556962025311,
+              0.013368743971707227
+            ]
+          }
+        },
+        "0.75": {
+          "precision": {
+            "score_only": 0.6757215619694398,
+            "real_confidence": 0.6740237691001698,
+            "shuffled_confidence": 0.6774193548387096
+          },
+          "real_minus_score_only": {
+            "delta": -0.001697792869269965,
+            "bootstrap_95": [
+              -0.017613777377923932,
+              0.007674062851637469
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.003395585738539819,
+            "bootstrap_95": [
+              -0.016005172413793116,
+              0.012279314888010467
+            ]
+          }
+        },
+        "1.0": {
+          "precision": {
+            "score_only": 0.5674300254452926,
+            "real_confidence": 0.5674300254452926,
+            "shuffled_confidence": 0.5674300254452926
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "aligned_1": {
+      "test_candidates": 786,
+      "results": {
+        "0.25": {
+          "precision": {
+            "score_only": 0.8010204081632653,
+            "real_confidence": 0.7959183673469388,
+            "shuffled_confidence": 0.8112244897959183
+          },
+          "real_minus_score_only": {
+            "delta": -0.005102040816326481,
+            "bootstrap_95": [
+              -0.044303797468354444,
+              0.024757653061224467
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": -0.015306122448979553,
+            "bootstrap_95": [
+              -0.10057601401606557,
+              0.032381221719456926
+            ]
+          }
+        },
+        "0.5": {
+          "precision": {
+            "score_only": 0.7582697201017812,
+            "real_confidence": 0.7582697201017812,
+            "shuffled_confidence": 0.7557251908396947
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              -0.022978894389826154,
+              0.011135168254667632
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0025445292620864812,
+            "bootstrap_95": [
+              -0.029311141932501186,
+              0.014797794117646982
+            ]
+          }
+        },
+        "0.75": {
+          "precision": {
+            "score_only": 0.66553480475382,
+            "real_confidence": 0.66553480475382,
+            "shuffled_confidence": 0.66553480475382
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              -0.013948447426422978,
+              0.010423796718817881
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              -0.013669392371363071,
+              0.00861639316277373
+            ]
+          }
+        },
+        "1.0": {
+          "precision": {
+            "score_only": 0.5699745547073791,
+            "real_confidence": 0.5699745547073791,
+            "shuffled_confidence": 0.5699745547073791
+          },
+          "real_minus_score_only": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "real_minus_shuffled_confidence": {
+            "delta": 0.0,
+            "bootstrap_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "residue_transfer": {
+    "sequence_0": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5164621524170571,
+        "micro_ap": 0.4817136373029753,
+        "auroc": 0.9324881800199782,
+        "recall_top3": 0.2907052639614146,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5415696915548371,
+        "micro_ap": 0.5182038966363784,
+        "auroc": 0.9386188166956311,
+        "recall_top3": 0.309711660448727,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5397510803704847,
+        "micro_ap": 0.5173910174874494,
+        "auroc": 0.9384196102804465,
+        "recall_top3": 0.309711660448727,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5377018548209266,
+        "micro_ap": 0.5112827335828676,
+        "auroc": 0.9374219472254222,
+        "recall_top3": 0.3059857426006718,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "neutral_0": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5511424216315183,
+        "micro_ap": 0.5144053485547873,
+        "auroc": 0.9478097639698769,
+        "recall_top3": 0.30391697647431704,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5725844544566031,
+        "micro_ap": 0.548097005524207,
+        "auroc": 0.9532078693422114,
+        "recall_top3": 0.3178888400645012,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5737362628032493,
+        "micro_ap": 0.5472259141829195,
+        "auroc": 0.9530907555418322,
+        "recall_top3": 0.31952460887584255,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5715221761457421,
+        "micro_ap": 0.543023592825591,
+        "auroc": 0.9526601717806308,
+        "recall_top3": 0.31282424816784826,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "aligned_0": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5427477036028918,
+        "micro_ap": 0.5193193502962472,
+        "auroc": 0.948379469192837,
+        "recall_top3": 0.29484290960669385,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5622524081599423,
+        "micro_ap": 0.5522784887364448,
+        "auroc": 0.9508047720653922,
+        "recall_top3": 0.30800762868744336,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.562352008896971,
+        "micro_ap": 0.55143837860176,
+        "auroc": 0.9507082487163956,
+        "recall_top3": 0.3099160256340083,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5589076548730006,
+        "micro_ap": 0.5470747136582457,
+        "auroc": 0.9503847025772373,
+        "recall_top3": 0.30893291205547485,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "shuffled_0": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5405842279185831,
+        "micro_ap": 0.5270890887030792,
+        "auroc": 0.9449316268752631,
+        "recall_top3": 0.29237115883063935,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5556669050258406,
+        "micro_ap": 0.5528863329825044,
+        "auroc": 0.9497317303289539,
+        "recall_top3": 0.3044935572125797,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5557477446494867,
+        "micro_ap": 0.552151359739588,
+        "auroc": 0.9495185946132825,
+        "recall_top3": 0.30544775568586213,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5543775692210886,
+        "micro_ap": 0.5494588652237695,
+        "auroc": 0.9486743702718431,
+        "recall_top3": 0.30410908163726447,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "sequence_1": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5468132446232813,
+        "micro_ap": 0.49961267384606595,
+        "auroc": 0.9409510851421234,
+        "recall_top3": 0.3087642178673599,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5681541122399012,
+        "micro_ap": 0.5352186351413071,
+        "auroc": 0.9453413984986019,
+        "recall_top3": 0.3166300638534349,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5679888327679273,
+        "micro_ap": 0.5345661097329487,
+        "auroc": 0.9451679816105787,
+        "recall_top3": 0.3176637788661576,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5656055679565781,
+        "micro_ap": 0.5289710768020806,
+        "auroc": 0.9445304746333925,
+        "recall_top3": 0.3163915142351143,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "neutral_1": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5624186928883482,
+        "micro_ap": 0.5374335061430452,
+        "auroc": 0.9501520109470896,
+        "recall_top3": 0.3030630607270765,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5813176024903921,
+        "micro_ap": 0.5665143983938654,
+        "auroc": 0.9530497013170552,
+        "recall_top3": 0.3121405873141451,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5810336275176322,
+        "micro_ap": 0.565763348280674,
+        "auroc": 0.9529278793181031,
+        "recall_top3": 0.3121405873141451,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5800330128443612,
+        "micro_ap": 0.5617970017805495,
+        "auroc": 0.9524734853733109,
+        "recall_top3": 0.3108291760790697,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "aligned_1": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5659946554473213,
+        "micro_ap": 0.5231957581500749,
+        "auroc": 0.952533380309754,
+        "recall_top3": 0.31506972298912717,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.584196659169281,
+        "micro_ap": 0.5541004651945813,
+        "auroc": 0.9555438668719907,
+        "recall_top3": 0.3235627370473635,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5834898174280343,
+        "micro_ap": 0.5533269799071494,
+        "auroc": 0.9553514060596944,
+        "recall_top3": 0.32307200640396105,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5794115863101611,
+        "micro_ap": 0.5489367419922085,
+        "auroc": 0.95477430864828,
+        "recall_top3": 0.322245034393783,
+        "proteins": 262,
+        "positives": 2070
+      }
+    },
+    "shuffled_1": {
+      "sequence_transfer": {
+        "alpha": 1,
+        "macro_ap": 0.5489889566740721,
+        "micro_ap": 0.514645915881961,
+        "auroc": 0.9499640366468864,
+        "recall_top3": 0.2991665863540346,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "off": {
+        "alpha": 1,
+        "macro_ap": 0.5698414441193868,
+        "micro_ap": 0.54635526106364,
+        "auroc": 0.953651706787961,
+        "recall_top3": 0.31142013539193486,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "real": {
+        "alpha": 1,
+        "macro_ap": 0.5698428268965717,
+        "micro_ap": 0.5456225700809557,
+        "auroc": 0.9534412392274226,
+        "recall_top3": 0.31142013539193486,
+        "proteins": 262,
+        "positives": 2070
+      },
+      "shuffled": {
+        "alpha": 1,
+        "macro_ap": 0.5646555870166439,
+        "micro_ap": 0.5408353619330847,
+        "auroc": 0.9527446396077206,
+        "recall_top3": 0.3075988930210741,
+        "proteins": 262,
+        "positives": 2070
+      }
+    }
+  },
+  "paired_transfer_macro_ap": {
+    "sequence_real_minus_sequence_sequence_transfer": {
+      "macro_ap_delta": 0.02223225804903676,
+      "seed_deltas": [
+        0.0232889279534274,
+        0.02117558814464612
+      ],
+      "bootstrap_95": [
+        0.006501697231256512,
+        0.03678118109849585
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "sequence_off_minus_sequence_sequence_transfer": {
+      "macro_ap_delta": 0.023224203377199944,
+      "seed_deltas": [
+        0.02510753913777994,
+        0.021340867616619942
+      ],
+      "bootstrap_95": [
+        0.006799169318761236,
+        0.03853553656152425
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "sequence_real_minus_sequence_off": {
+      "macro_ap_delta": -0.0009919453281631802,
+      "seed_deltas": [
+        -0.0018186111843525362,
+        -0.00016527947197382369
+      ],
+      "bootstrap_95": [
+        -0.0019464474814099278,
+        0.0001507612046678712
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_real_minus_sequence_sequence_transfer": {
+      "macro_ap_delta": 0.04128321464233352,
+      "seed_deltas": [
+        0.0458898564799139,
+        0.03667657280475315
+      ],
+      "bootstrap_95": [
+        0.011801334508591856,
+        0.06177775559674624
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_real_minus_neutral_off": {
+      "macro_ap_delta": -0.004030115310994861,
+      "seed_deltas": [
+        -0.010232445559632056,
+        0.0021722149376423314
+      ],
+      "bootstrap_95": [
+        -0.014859991721889053,
+        0.006915039785360402
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    },
+    "aligned_real_minus_shuffled_shuffled": {
+      "macro_ap_delta": 0.01340433504363649,
+      "seed_deltas": [
+        0.00797443967588249,
+        0.018834230411390495
+      ],
+      "bootstrap_95": [
+        0.00044588197080312704,
+        0.023976813041676627
+      ],
+      "test_proteins": 262,
+      "test_homology_groups": 130
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "settings": {
+    "branch": "bp",
+    "variants": [
+      "sequence",
+      "local",
+      "random_geometry",
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "cache": ".revision-cache\\uax_residues",
+    "temporal_labels": null,
+    "temporal_cache": null,
+    "pretrained_structure": false,
+    "evaluate_test": false,
+    "output": "revision_results\\bp_uax_residue_validation.json",
+    "epochs": 12,
+    "patience": 4,
+    "seeds": [
+      0
+    ],
+    "width": 96,
+    "token_budget": 12000,
+    "lr": [
+      0.001
+    ],
+    "strength": [
+      0.7
+    ],
+    "device": "cuda"
+  },
+  "counts": {
+    "train": {
+      "included": 7221,
+      "available": 8400
+    },
+    "valid": {
+      "included": 2015,
+      "available": 2397
+    }
+  },
+  "metrics": [
+    {
+      "variant": "sequence",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.5416133768481026,
+      "validation_threshold": 0.33
+    },
+    {
+      "variant": "local",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 10,
+      "last_epoch": 12,
+      "validation_fmax": 0.544042785171049,
+      "validation_threshold": 0.26
+    },
+    {
+      "variant": "random_geometry",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 10,
+      "last_epoch": 12,
+      "validation_fmax": 0.5491799788538883,
+      "validation_threshold": 0.27
+    },
+    {
+      "variant": "neutral",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.5385826825508927,
+      "validation_threshold": 0.3
+    },
+    {
+      "variant": "aligned",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.7,
+      "best_epoch": 12,
+      "last_epoch": 12,
+      "validation_fmax": 0.5462773342541873,
+      "validation_threshold": 0.31
+    },
+    {
+      "variant": "shuffled",
+      "seed": 0,
+      "lr": 0.001,
+      "strength": 0.7,
+      "best_epoch": 10,
+      "last_epoch": 12,
+      "validation_fmax": 0.5452023174640753,
+      "validation_threshold": 0.3
+    }
+  ],
+  "aligned_minus_control": {}
+}

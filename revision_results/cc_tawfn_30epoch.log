@@ -1,0 +1,71 @@
+cc train {'proteins': 8962, 'exact_sequence_exclusions': 0}
+cc valid {'proteins': 2552, 'exact_sequence_exclusions': 8}
+cc test {'proteins': 1278, 'exact_sequence_exclusions': 3}
+C:\Users\ayaan\Downloads\Struct2GO-1\.venv\lib\site-packages\torch\nn\modules\conv.py:306: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\cudnn\Conv_v8.cpp:919.)
+  return F.conv1d(input, weight, bias, self.stride,
+C:\Users\ayaan\Downloads\Struct2GO-1\.venv\lib\site-packages\torch\autograd\graph.py:744: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\cudnn\Conv_v8.cpp:919.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+TAWFN cnn 1 validation BCE 0.13735127449035645
+TAWFN cnn 2 validation BCE 0.13252829015254974
+TAWFN cnn 3 validation BCE 0.12942169606685638
+TAWFN cnn 4 validation BCE 0.12524721026420593
+TAWFN cnn 5 validation BCE 0.12372533977031708
+TAWFN cnn 6 validation BCE 0.12346410006284714
+TAWFN cnn 7 validation BCE 0.12240118533372879
+TAWFN cnn 8 validation BCE 0.12501999735832214
+TAWFN cnn 9 validation BCE 0.12217317521572113
+TAWFN cnn 10 validation BCE 0.12331902235746384
+TAWFN cnn 11 validation BCE 0.12302876263856888
+TAWFN cnn 12 validation BCE 0.12223120778799057
+TAWFN cnn 13 validation BCE 0.12381364405155182
+TAWFN cnn 14 validation BCE 0.12291684746742249
+TAWFN cnn 15 validation BCE 0.12259285151958466
+TAWFN cnn 16 validation BCE 0.1231844574213028
+TAWFN cnn 17 validation BCE 0.12328492105007172
+TAWFN cnn 18 validation BCE 0.12711124122142792
+TAWFN cnn 19 validation BCE 0.12530562281608582
+TAWFN cnn 20 validation BCE 0.12696903944015503
+TAWFN cnn 21 validation BCE 0.12509620189666748
+TAWFN cnn 22 validation BCE 0.12722137570381165
+TAWFN cnn 23 validation BCE 0.12652045488357544
+TAWFN cnn 24 validation BCE 0.12606017291545868
+TAWFN cnn 25 validation BCE 0.12772078812122345
+TAWFN cnn 26 validation BCE 0.1315496414899826
+TAWFN cnn 27 validation BCE 0.13410639762878418
+TAWFN cnn 28 validation BCE 0.12980379164218903
+TAWFN cnn 29 validation BCE 0.13045606017112732
+TAWFN cnn 30 validation BCE 0.1298237144947052
+TAWFN gcn 1 validation BCE 0.14818191528320312
+TAWFN gcn 2 validation BCE 0.1354224681854248
+TAWFN gcn 3 validation BCE 0.13211175799369812
+TAWFN gcn 4 validation BCE 0.12960867583751678
+TAWFN gcn 5 validation BCE 0.12822823226451874
+TAWFN gcn 6 validation BCE 0.12820586562156677
+TAWFN gcn 7 validation BCE 0.12692780792713165
+TAWFN gcn 8 validation BCE 0.12770144641399384
+TAWFN gcn 9 validation BCE 0.12559902667999268
+TAWFN gcn 10 validation BCE 0.13037660717964172
+TAWFN gcn 11 validation BCE 0.12579084932804108
+TAWFN gcn 12 validation BCE 0.12588787078857422
+TAWFN gcn 13 validation BCE 0.12506796419620514
+TAWFN gcn 14 validation BCE 0.12396962940692902
+TAWFN gcn 15 validation BCE 0.12444852292537689
+TAWFN gcn 16 validation BCE 0.12250842154026031
+TAWFN gcn 17 validation BCE 0.12405180931091309
+TAWFN gcn 18 validation BCE 0.12412485480308533
+TAWFN gcn 19 validation BCE 0.12408892065286636
+TAWFN gcn 20 validation BCE 0.12293262034654617
+TAWFN gcn 21 validation BCE 0.12414376437664032
+TAWFN gcn 22 validation BCE 0.12554697692394257
+TAWFN gcn 23 validation BCE 0.12593884766101837
+TAWFN gcn 24 validation BCE 0.12449923902750015
+TAWFN gcn 25 validation BCE 0.12492332607507706
+TAWFN gcn 26 validation BCE 0.12605199217796326
+TAWFN gcn 27 validation BCE 0.12542757391929626
+TAWFN gcn 28 validation BCE 0.12639859318733215
+TAWFN gcn 29 validation BCE 0.12616145610809326
+TAWFN gcn 30 validation BCE 0.12644866108894348
+{"branch": "cc", "variant": "tawfn_cnn_adapted", "seed": 0, "gate_bias": null, "gate_slope": null, "valid_fmax": 0.7111647619048131, "valid_threshold": 0.48, "test_f1_at_valid_threshold": 0.7034487298899279, "test_fmax": 0.7038983141759463, "test_micro_aupr": 0.703599221907972}
+{"branch": "cc", "variant": "tawfn_gcn_adapted", "seed": 0, "gate_bias": null, "gate_slope": null, "valid_fmax": 0.7073709096916284, "valid_threshold": 0.35, "test_f1_at_valid_threshold": 0.6991159194729566, "test_fmax": 0.6992184715015892, "test_micro_aupr": 0.6927192828266397}
+{"branch": "cc", "variant": "tawfn_adapted_static", "seed": 0, "gate_bias": 0.2475065141916275, "gate_slope": 0.0, "valid_fmax": 0.7172146042148305, "valid_threshold": 0.38, "test_f1_at_valid_threshold": 0.7096072009938812, "test_fmax": 0.7097257385545709, "test_micro_aupr": 0.7104901266571286}
+{"branch": "cc", "variant": "tawfn_adapted_confidence", "seed": 0, "gate_bias": -0.4875742793083191, "gate_slope": 0.9285060167312622, "valid_fmax": 0.7164444982048442, "valid_threshold": 0.42, "test_f1_at_valid_threshold": 0.709146980565991, "test_fmax": 0.7096289957037041, "test_micro_aupr": 0.7105082829131928}

@@ -1,0 +1,264 @@
+{
+  "branch": "mf",
+  "settings": {
+    "branch": "mf",
+    "output": "revision_results\\mf_standardized_confidence.json",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "batch_size": 64,
+    "epochs": 8,
+    "width": 48,
+    "patience": 3,
+    "device": "cuda",
+    "standardize_pool_inputs": true,
+    "pool_only": true
+  },
+  "audit": {
+    "train": {
+      "proteins": 7627,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 7627,
+      "mean_plddt_percentiles": [
+        32.929205894470215,
+        67.82546639442444,
+        78.55114936828613,
+        86.85723543167114,
+        98.43137264251709
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2178,
+      "exact_sequence_exclusions": 1,
+      "unique_sequence_feature_vectors": 2178,
+      "mean_plddt_percentiles": [
+        30.20589053630829,
+        68.90436261892319,
+        79.06788289546967,
+        87.22003400325775,
+        98.20142388343811
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    },
+    "test": {
+      "proteins": 1085,
+      "exact_sequence_exclusions": 6,
+      "unique_sequence_feature_vectors": 1085,
+      "mean_plddt_percentiles": [
+        39.25844132900238,
+        68.22943687438965,
+        78.71837615966797,
+        87.80267238616943,
+        98.58721494674683
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0,
+        "valid": 0
+      }
+    }
+  },
+  "validation_parts": [
+    1089,
+    653,
+    436
+  ],
+  "metrics": [
+    {
+      "seed": 0,
+      "variant": "ordinary_pool",
+      "valid_fmax": 0.7110347382934766,
+      "valid_threshold": 0.36,
+      "test_f1_at_valid_threshold": 0.7278855330863195,
+      "test_fmax": 0.7281234634568757,
+      "test_micro_aupr": 0.7933315910962244
+    },
+    {
+      "seed": 0,
+      "variant": "real_pool",
+      "valid_fmax": 0.7111377911794537,
+      "valid_threshold": 0.36,
+      "test_f1_at_valid_threshold": 0.7272160859912901,
+      "test_fmax": 0.7277626462066155,
+      "test_micro_aupr": 0.793222165502263
+    },
+    {
+      "seed": 0,
+      "variant": "shuffled_pool",
+      "valid_fmax": 0.7097174399052102,
+      "valid_threshold": 0.36,
+      "test_f1_at_valid_threshold": 0.7277286811312143,
+      "test_fmax": 0.7286182885167433,
+      "test_micro_aupr": 0.7933417449568219
+    },
+    {
+      "seed": 1,
+      "variant": "ordinary_pool",
+      "valid_fmax": 0.7155461303676397,
+      "valid_threshold": 0.4,
+      "test_f1_at_valid_threshold": 0.7213170280783312,
+      "test_fmax": 0.7223655426947615,
+      "test_micro_aupr": 0.7907132827828909
+    },
+    {
+      "seed": 1,
+      "variant": "real_pool",
+      "valid_fmax": 0.7141872581589576,
+      "valid_threshold": 0.4,
+      "test_f1_at_valid_threshold": 0.7205731074803863,
+      "test_fmax": 0.7224864938892878,
+      "test_micro_aupr": 0.7905610888977854
+    },
+    {
+      "seed": 1,
+      "variant": "shuffled_pool",
+      "valid_fmax": 0.714930897545082,
+      "valid_threshold": 0.4,
+      "test_f1_at_valid_threshold": 0.7207764625183688,
+      "test_fmax": 0.722290418289242,
+      "test_micro_aupr": 0.7907022996686311
+    },
+    {
+      "seed": 2,
+      "variant": "ordinary_pool",
+      "valid_fmax": 0.7081530036805628,
+      "valid_threshold": 0.4,
+      "test_f1_at_valid_threshold": 0.7214340926220482,
+      "test_fmax": 0.7243772235463163,
+      "test_micro_aupr": 0.7923667112077805
+    },
+    {
+      "seed": 2,
+      "variant": "real_pool",
+      "valid_fmax": 0.707812140573246,
+      "valid_threshold": 0.33,
+      "test_f1_at_valid_threshold": 0.7232903488170123,
+      "test_fmax": 0.72419911035241,
+      "test_micro_aupr": 0.7924754516284609
+    },
+    {
+      "seed": 2,
+      "variant": "shuffled_pool",
+      "valid_fmax": 0.7082617492330339,
+      "valid_threshold": 0.4,
+      "test_f1_at_valid_threshold": 0.721710323239209,
+      "test_fmax": 0.7245865675469338,
+      "test_micro_aupr": 0.7924198032681136
+    }
+  ],
+  "contrasts": {
+    "real_pool_minus_ordinary_pool": {
+      "all": {
+        "n": 1085,
+        "mean_delta": 0.00014762950066330807,
+        "seed_deltas": [
+          -0.000669447095029585,
+          -0.0007439205979453689,
+          0.0018562561949648781
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0010418595338124873,
+          0.0014238408547927461
+        ]
+      },
+      "mean_below_70": {
+        "n": 330,
+        "mean_delta": -0.0005276593483628892,
+        "seed_deltas": [
+          -0.0003546538624447093,
+          -0.0009939021473686083,
+          -0.0002344220352753501
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0027610127941635524,
+          0.0017461371526213455
+        ]
+      },
+      "mean_70_to_90": {
+        "n": 574,
+        "mean_delta": -6.52981705028625e-05,
+        "seed_deltas": [
+          -0.0004118907360322055,
+          -0.0006459755523670063,
+          0.0008619717768906243
+        ],
+        "test_protein_bootstrap_95": [
+          -0.001669185077086574,
+          0.0015838428267402535
+        ]
+      },
+      "mean_at_least_90": {
+        "n": 181,
+        "mean_delta": 0.0020728674113970427,
+        "seed_deltas": [
+          -0.002048632095269287,
+          -0.0005535987318210367,
+          0.008820833061281452
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0008387636210315631,
+          0.005560487249772825
+        ]
+      }
+    },
+    "real_pool_minus_shuffled_pool": {
+      "all": {
+        "n": 1085,
+        "mean_delta": 0.0002880251332989525,
+        "seed_deltas": [
+          -0.000512595139924521,
+          -0.0002033550379825222,
+          0.0015800255778039007
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0009388438291100411,
+          0.00152160000301291
+        ]
+      },
+      "mean_below_70": {
+        "n": 330,
+        "mean_delta": -0.0006213872355229633,
+        "seed_deltas": [
+          -0.0005770747283377897,
+          -0.000770088100441324,
+          -0.000516998877789776
+        ],
+        "test_protein_bootstrap_95": [
+          -0.002887061139438022,
+          0.0016543703225676582
+        ]
+      },
+      "mean_70_to_90": {
+        "n": 574,
+        "mean_delta": 8.669120069741225e-05,
+        "seed_deltas": [
+          -0.0002404442006144203,
+          2.9641164955518384e-05,
+          0.00047087663775113864
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0014970876942157116,
+          0.001749258048585958
+        ]
+      },
+      "mean_at_least_90": {
+        "n": 181,
+        "mean_delta": 0.002619115169874712,
+        "seed_deltas": [
+          -0.0012374074491046105,
+          0.00014814386787675993,
+          0.008946609090851987
+        ],
+        "test_protein_bootstrap_95": [
+          -0.00042531396801410434,
+          0.006180078454753733
+        ]
+      }
+    }
+  },
+  "fallback_rules": []
+}

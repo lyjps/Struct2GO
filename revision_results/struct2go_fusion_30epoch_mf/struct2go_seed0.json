@@ -1,0 +1,12 @@
+{
+  "branch": "mf",
+  "variant": "struct2go",
+  "seed": 0,
+  "best_epoch": 26,
+  "valid_fmax": 0.504178310659324,
+  "valid_threshold": 0.3,
+  "test_fmax": 0.5016616878848511,
+  "test_f1_at_valid_threshold": 0.5010810459773168,
+  "test_micro_aupr": 0.46972574985374965,
+  "test_micro_roc_auc": 0.8622749390445154
+}

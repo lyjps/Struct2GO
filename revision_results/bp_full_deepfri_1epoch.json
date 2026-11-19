@@ -1,0 +1,66 @@
+{
+  "branch": "bp",
+  "settings": {
+    "branch": "bp",
+    "weights": ".revision-cache\\deepfri_lstm.npz",
+    "output": "revision_results\\bp_full_deepfri_1epoch.json",
+    "epochs": 1,
+    "seed": 0
+  },
+  "split_audit": {
+    "train": {
+      "proteins": 8400,
+      "exact_sequence_exclusions": 0,
+      "unique_sequence_feature_vectors": 8400,
+      "mean_plddt_percentiles": [
+        30.20589053630829,
+        67.73123294115067,
+        78.50707471370697,
+        86.86801791191101,
+        98.50701689720154
+      ],
+      "overlapping_sequence_vectors": {}
+    },
+    "valid": {
+      "proteins": 2397,
+      "exact_sequence_exclusions": 3,
+      "unique_sequence_feature_vectors": 2397,
+      "mean_plddt_percentiles": [
+        32.802534103393555,
+        67.43332147598267,
+        78.34644317626953,
+        86.70123815536499,
+        98.22679162025452
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0
+      }
+    },
+    "test": {
+      "proteins": 1198,
+      "exact_sequence_exclusions": 2,
+      "unique_sequence_feature_vectors": 1198,
+      "mean_plddt_percentiles": [
+        35.65042316913605,
+        68.47356855869293,
+        78.80385518074036,
+        87.1761217713356,
+        98.00854325294495
+      ],
+      "overlapping_sequence_vectors": {
+        "train": 0,
+        "valid": 0
+      }
+    }
+  },
+  "best_epoch": 1,
+  "last_epoch": 1,
+  "checkpoint_parity_max_error": 3.91155481338501e-08,
+  "metrics": {
+    "valid_fmax": 0.4081371675106036,
+    "valid_threshold": 0.26,
+    "test_f1_at_valid_threshold": 0.4014665596798832,
+    "test_fmax": 0.4016593693138305,
+    "test_micro_aupr": 0.34109747647006916
+  }
+}

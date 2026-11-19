@@ -1,0 +1,42 @@
+{
+  "branch": "bp",
+  "settings": {
+    "branch": "bp",
+    "output": "revision_results\\bp_full_deepgoplus.json",
+    "epochs": 12,
+    "seed": 0,
+    "diamond": ".revision-cache\\diamond\\diamond.exe"
+  },
+  "best_epoch": 5,
+  "parameters": 18334505,
+  "bf16": true,
+  "diamond_weight": 0.8,
+  "counts": {
+    "train": 8400,
+    "valid": 2397,
+    "test": 1198
+  },
+  "metrics": {
+    "full_cnn": {
+      "valid_fmax": 0.47959313329834385,
+      "valid_threshold": 0.24,
+      "test_f1_at_valid_threshold": 0.4726943780828631,
+      "test_fmax": 0.4730602075028117,
+      "test_micro_aupr": 0.44016059984006795
+    },
+    "diamond": {
+      "valid_fmax": 0.5633184596724379,
+      "valid_threshold": 0.37,
+      "test_f1_at_valid_threshold": 0.5504930182383,
+      "test_fmax": 0.5520999746552406,
+      "test_micro_aupr": 0.4386916634484618
+    },
+    "full_deepgoplus": {
+      "valid_fmax": 0.6038485517966496,
+      "valid_threshold": 0.19,
+      "test_f1_at_valid_threshold": 0.5988493594516778,
+      "test_fmax": 0.5988493594516778,
+      "test_micro_aupr": 0.5079863093597492
+    }
+  }
+}

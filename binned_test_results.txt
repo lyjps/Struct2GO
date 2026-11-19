@@ -1,0 +1,40 @@
+Branch: bp
+Model: save_models\mymodel_bp_network_b_8_0.0005_0.45_0.5307258317818497.pkl
+Total samples: 1200
+
+================================================================================
+BINNED RESULTS
+================================================================================
+
+VERY_HIGH (195 samples)
+  Threshold:  0.67
+  F1:         0.4369
+  Precision:  0.4249
+  Recall:     0.4497
+  AUC:        0.8706
+  AUPR:       0.4719
+
+HIGH (668 samples)
+  Threshold:  0.62
+  F1:         0.4574
+  Precision:  0.4308
+  Recall:     0.4873
+  AUC:        0.8651
+  AUPR:       0.5002
+
+MEDIUM (300 samples)
+  Threshold:  0.66
+  F1:         0.4963
+  Precision:  0.4909
+  Recall:     0.5019
+  AUC:        0.8760
+  AUPR:       0.5312
+
+LOW (37 samples)
+  Threshold:  0.75
+  F1:         0.5512
+  Precision:  0.5026
+  Recall:     0.6103
+  AUC:        0.9190
+  AUPR:       0.5428
+

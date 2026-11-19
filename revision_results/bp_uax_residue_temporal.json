@@ -1,0 +1,176 @@
+{
+  "settings": {
+    "branch": "bp",
+    "variants": [
+      "sequence",
+      "neutral",
+      "aligned",
+      "shuffled"
+    ],
+    "cache": ".revision-cache\\uax_residues",
+    "temporal_labels": ".revision-cache\\uax_temporal_go\\bp.json",
+    "temporal_cache": ".revision-cache\\uax_residues_temporal",
+    "pretrained_structure": true,
+    "structure_backbone": "gearnet",
+    "global_skip": true,
+    "evaluate_test": true,
+    "output": "revision_results\\bp_uax_residue_temporal.json",
+    "epochs": 16,
+    "patience": 5,
+    "seeds": [
+      1
+    ],
+    "width": 96,
+    "token_budget": 12000,
+    "lr": [
+      0.001
+    ],
+    "strength": [
+      0.2
+    ],
+    "device": "cuda"
+  },
+  "counts": {
+    "train": {
+      "included": 6921,
+      "available": 6921
+    },
+    "valid": {
+      "included": 1222,
+      "available": 1222
+    },
+    "test": {
+      "included": 68,
+      "available": 80
+    }
+  },
+  "metrics": [
+    {
+      "variant": "sequence",
+      "seed": 1,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 13,
+      "last_epoch": 16,
+      "validation_fmax": 0.4372165232397768,
+      "validation_threshold": 0.23,
+      "valid_fmax": 0.4372165232397768,
+      "valid_threshold": 0.23,
+      "test_f1_at_valid_threshold": 0.3273542688478022,
+      "test_fmax": 0.37685953169929415,
+      "test_micro_aupr": 0.2608272206228384
+    },
+    {
+      "variant": "neutral",
+      "seed": 1,
+      "lr": 0.001,
+      "strength": 0.0,
+      "best_epoch": 13,
+      "last_epoch": 16,
+      "validation_fmax": 0.4490877961954291,
+      "validation_threshold": 0.22,
+      "valid_fmax": 0.4490877961954291,
+      "valid_threshold": 0.22,
+      "test_f1_at_valid_threshold": 0.3321356060703229,
+      "test_fmax": 0.3586604209914606,
+      "test_micro_aupr": 0.2332957849124484
+    },
+    {
+      "variant": "aligned",
+      "seed": 1,
+      "lr": 0.001,
+      "strength": 0.2,
+      "best_epoch": 16,
+      "last_epoch": 16,
+      "validation_fmax": 0.44613160122632023,
+      "validation_threshold": 0.23,
+      "valid_fmax": 0.44613160122632023,
+      "valid_threshold": 0.23,
+      "test_f1_at_valid_threshold": 0.3259855796799598,
+      "test_fmax": 0.35157919317596287,
+      "test_micro_aupr": 0.2286944975732363
+    },
+    {
+      "variant": "shuffled",
+      "seed": 1,
+      "lr": 0.001,
+      "strength": 0.2,
+      "best_epoch": 16,
+      "last_epoch": 16,
+      "validation_fmax": 0.4476840957492913,
+      "validation_threshold": 0.2,
+      "valid_fmax": 0.4476840957492913,
+      "valid_threshold": 0.2,
+      "test_f1_at_valid_threshold": 0.3325256577645663,
+      "test_fmax": 0.3648298582189705,
+      "test_micro_aupr": 0.23811039847121948
+    }
+  ],
+  "aligned_minus_control": {
+    "sequence": {
+      "all": {
+        "n": 68,
+        "mean_delta": -0.0013686891678424407,
+        "seed_deltas": [
+          -0.0013686891678424407
+        ],
+        "test_protein_bootstrap_95": [
+          -0.03724564215928871,
+          0.032805989234489505
+        ]
+      }
+    },
+    "neutral": {
+      "all": {
+        "n": 68,
+        "mean_delta": -0.006150026390362995,
+        "seed_deltas": [
+          -0.006150026390362995
+        ],
+        "test_protein_bootstrap_95": [
+          -0.034728868678181805,
+          0.02325592146661133
+        ]
+      }
+    },
+    "test_time_neutral": {
+      "all": {
+        "n": 68,
+        "mean_delta": 0.0007308050907627872,
+        "seed_deltas": [
+          0.0007308050907627872
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0005446693173950842,
+          0.0020238669962650917
+        ]
+      }
+    },
+    "test_time_shuffled": {
+      "all": {
+        "n": 68,
+        "mean_delta": 0.00048038206233458336,
+        "seed_deltas": [
+          0.00048038206233458336
+        ],
+        "test_protein_bootstrap_95": [
+          -0.0032984567943605213,
+          0.0038934774214015584
+        ]
+      }
+    },
+    "shuffled": {
+      "all": {
+        "n": 68,
+        "mean_delta": -0.006540078084606438,
+        "seed_deltas": [
+          -0.006540078084606438
+        ],
+        "test_protein_bootstrap_95": [
+          -0.03259935197091736,
+          0.016990403631247264
+        ]
+      }
+    }
+  }
+}

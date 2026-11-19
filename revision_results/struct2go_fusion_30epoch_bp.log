@@ -1,0 +1,47 @@
+bp train 8400 0
+bp valid 2397 3
+bp test 1198 2
+bp struct2go seed 0 epoch 1 validation BCE 0.2105281
+bp struct2go seed 0 epoch 2 validation BCE 0.2095847
+bp struct2go seed 0 epoch 3 validation BCE 0.2083459
+bp struct2go seed 0 epoch 4 validation BCE 0.2135590
+bp struct2go seed 0 epoch 5 validation BCE 0.2109543
+bp struct2go seed 0 epoch 6 validation BCE 0.2091687
+bp struct2go seed 0 epoch 7 validation BCE 0.2137661
+bp struct2go seed 0 epoch 8 validation BCE 0.2089064
+bp struct2go seed 0 epoch 9 validation BCE 0.2088017
+bp struct2go seed 0 epoch 10 validation BCE 0.2076290
+bp struct2go seed 0 epoch 11 validation BCE 0.2077626
+bp struct2go seed 0 epoch 12 validation BCE 0.2108891
+bp struct2go seed 0 epoch 13 validation BCE 0.2073974
+bp struct2go seed 0 epoch 14 validation BCE 0.2078929
+bp struct2go seed 0 epoch 15 validation BCE 0.2079591
+bp struct2go seed 0 epoch 16 validation BCE 0.2088573
+bp struct2go seed 0 epoch 17 validation BCE 0.2076479
+bp struct2go seed 0 epoch 18 validation BCE 0.2102726
+bp struct2go seed 0 epoch 19 validation BCE 0.2077875
+bp struct2go seed 0 epoch 20 validation BCE 0.2070105
+bp struct2go seed 0 epoch 21 validation BCE 0.2073499
+bp struct2go seed 0 epoch 22 validation BCE 0.2080127
+bp struct2go seed 0 epoch 23 validation BCE 0.2074285
+bp struct2go seed 0 epoch 24 validation BCE 0.2070787
+bp struct2go seed 0 epoch 25 validation BCE 0.2097034
+bp struct2go seed 0 epoch 26 validation BCE 0.2085594
+bp struct2go seed 0 epoch 27 validation BCE 0.2072642
+bp struct2go seed 0 epoch 28 validation BCE 0.2071378
+bp struct2go seed 0 epoch 29 validation BCE 0.2076620
+bp struct2go seed 0 epoch 30 validation BCE 0.2076801
+{"branch": "bp", "variant": "struct2go", "seed": 0, "best_epoch": 20, "valid_fmax": 0.3914788790875621, "valid_threshold": 0.22, "test_fmax": 0.38896597350075357, "test_f1_at_valid_threshold": 0.3880213878038846, "test_micro_aupr": 0.32546064818157255, "test_micro_roc_auc": 0.7842689988790918}
+d_model 1024
+bp static_fusion seed 0 epoch 1 validation BCE 0.2094593
+bp static_fusion seed 0 epoch 2 validation BCE 0.2085798
+bp static_fusion seed 0 epoch 3 validation BCE 0.2081794
+bp static_fusion seed 0 epoch 4 validation BCE 0.2091244
+bp static_fusion seed 0 epoch 5 validation BCE 0.2089669
+bp static_fusion seed 0 epoch 6 validation BCE 0.2070104
+bp static_fusion seed 0 epoch 7 validation BCE 0.2099550
+bp static_fusion seed 0 epoch 8 validation BCE 0.2079966
+bp static_fusion seed 0 epoch 9 validation BCE 0.2076846
+bp static_fusion seed 0 epoch 10 validation BCE 0.2068451
+bp static_fusion seed 0 epoch 11 validation BCE 0.2082655
+bp static_fusion seed 0 epoch 12 validation BCE 0.2067354

@@ -1,0 +1,219 @@
+Thing: mf
+Network File: network
+Model: save_models\Q_Struct\mf\DeepFRI_mf_network_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.32
+F-score: 0.7174891341974692
+Recall: 0.6460483479947358
+Precision: 0.8066943435391801
+AUC: 0.9616632046817982
+AUPR: 0.8438211300373386
+
+Thing: mf
+Network File: network
+Model: save_models\Q_Struct\mf\DeepFRI_mf_network_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.29000000000000004
+F-score: 0.7147297854012958
+Recall: 0.6609406386368359
+Precision: 0.7780495759947815
+AUC: 0.9618602911073302
+AUPR: 0.8441041957036008
+
+Thing: mf
+Network File: network
+Model: save_models\Q_Struct\mf\DeepFRI_mf_network_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.32
+F-score: 0.7170748481259313
+Recall: 0.6499965366765948
+Precision: 0.7995910020449898
+AUC: 0.9615773429645328
+AUPR: 0.8438392044869054
+
+Thing: mf
+Network File: network_a
+Model: save_models\Q_Struct\mf\DeepFRI_mf_network_a_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.36000000000000004
+F-score: 0.7438186813186813
+Recall: 0.6751402645979081
+Precision: 0.8280519921841815
+AUC: 0.9645404596527478
+AUPR: 0.8674116154068932
+
+Thing: mf
+Network File: network_a
+Model: save_models\Q_Struct\mf\DeepFRI_mf_network_a_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.39
+F-score: 0.7398653816735505
+Recall: 0.6700145459583016
+Precision: 0.8259755785159252
+AUC: 0.965255496636023
+AUPR: 0.8661135590245439
+
+Thing: mf
+Network File: network_a
+Model: save_models\Q_Struct\mf\DeepFRI_mf_network_a_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.41000000000000003
+F-score: 0.7420072069309208
+Recall: 0.6703608782988155
+Precision: 0.8308009271182075
+AUC: 0.9663940712627207
+AUPR: 0.8685235033108996
+
+Thing: bp
+Network File: network
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.23
+F-score: 0.4796739794458579
+Recall: 0.4734825354176844
+Precision: 0.48602949242317395
+AUC: 0.8761365559828648
+AUPR: 0.5612254670320078
+
+Thing: bp
+Network File: network
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.24000000000000002
+F-score: 0.48035161511377866
+Recall: 0.46549829018075234
+Precision: 0.49618407563503814
+AUC: 0.8761826768768948
+AUPR: 0.561544812417462
+
+Thing: bp
+Network File: network_a
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_a_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.27
+F-score: 0.49485163906183643
+Recall: 0.4713910600879336
+Precision: 0.5207697367311487
+AUC: 0.8798762763335263
+AUPR: 0.5805709170802242
+
+Thing: bp
+Network File: network_a
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_a_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.27
+F-score: 0.49358623814508695
+Recall: 0.4822758915486077
+Precision: 0.5054398259255704
+AUC: 0.8806687821340109
+AUPR: 0.5795276212236518
+
+Thing: bp
+Network File: network_b
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_b_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.27
+F-score: 0.49355259806418744
+Recall: 0.4732993404982902
+Precision: 0.5156166844065992
+AUC: 0.8797500021817015
+AUPR: 0.5801220082239145
+
+Thing: bp
+Network File: network_b
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_b_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.25
+F-score: 0.49417772622508777
+Recall: 0.5008091108939912
+Precision: 0.4877196634057863
+AUC: 0.8811033069526772
+AUPR: 0.5825952506600314
+
+Thing: bp
+Network File: network_b
+Model: save_models\Q_Struct\bp\DeepFRI_bp_network_b_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.25
+F-score: 0.49270971115691037
+Recall: 0.48905410356619444
+Precision: 0.4964203805863758
+AUC: 0.8798810131478281
+AUPR: 0.5790534726581755
+
+Thing: cc
+Network File: network
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.32
+F-score: 0.6583316419728029
+Recall: 0.6287264973832138
+Precision: 0.6908626198083067
+AUC: 0.9408858036365351
+AUPR: 0.7835934183680482
+
+Thing: cc
+Network File: network
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.34
+F-score: 0.6585879438480594
+Recall: 0.6183756541965497
+Precision: 0.704393905939501
+AUC: 0.9410130367333518
+AUPR: 0.7838814032799077
+
+Thing: cc
+Network File: network
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.31
+F-score: 0.659052385180402
+Recall: 0.6330684241132002
+Precision: 0.6872606371785699
+AUC: 0.9411986973852553
+AUPR: 0.7841206423431977
+
+Thing: cc
+Network File: network_a
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_a_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.41000000000000003
+F-score: 0.6684203933358387
+Recall: 0.6205853847644892
+Precision: 0.7242455775234131
+AUC: 0.9433697923184522
+AUPR: 0.7945139735203017
+
+Thing: cc
+Network File: network_a
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_a_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.34
+F-score: 0.6674112582243522
+Recall: 0.6370614460166699
+Precision: 0.7007974753720841
+AUC: 0.9423443279008952
+AUPR: 0.793538920279311
+
+Thing: cc
+Network File: network_a
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_a_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.35000000000000003
+F-score: 0.6659418208673532
+Recall: 0.6292304710215157
+Precision: 0.7072023005533528
+AUC: 0.9427999866560652
+AUPR: 0.7928479761252556
+
+Thing: cc
+Network File: network_b
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_b_8_0.0001_0.5000_seed0.pkl
+Threshold: 0.35000000000000003
+F-score: 0.665481162896489
+Recall: 0.6238418298119791
+Precision: 0.7130766162981345
+AUC: 0.9415152667662114
+AUPR: 0.7906432362621019
+
+Thing: cc
+Network File: network_b
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_b_8_0.0001_0.5000_seed1.pkl
+Threshold: 0.37
+F-score: 0.6669224245850665
+Recall: 0.6402403566582671
+Precision: 0.6959251611815769
+AUC: 0.9430993246321469
+AUPR: 0.793006722374489
+
+Thing: cc
+Network File: network_b
+Model: save_models\Q_Struct\cc\DeepFRI_cc_network_b_8_0.0001_0.5000_seed2.pkl
+Threshold: 0.34
+F-score: 0.6669068924789302
+Recall: 0.6457452994766427
+Precision: 0.6895024422551536
+AUC: 0.9439224589351007
+AUPR: 0.794815245783596

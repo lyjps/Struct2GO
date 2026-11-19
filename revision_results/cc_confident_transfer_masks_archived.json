@@ -1,0 +1,743 @@
+{
+  "settings": {
+    "aa": {
+      "fit_fmax": 0.6277185938569909,
+      "parameters": [
+        3,
+        0,
+        0
+      ]
+    },
+    "sequence_mix": {
+      "weights": [
+        0.4,
+        0.6,
+        0.0
+      ],
+      "fit_fmax": 0.761629898110964
+    },
+    "off": {
+      "fit_fmax": 0.7617865783344127,
+      "parameters": [
+        3,
+        0,
+        10
+      ],
+      "weight": 0.25,
+      "routing": "weak_sequence"
+    },
+    "real": {
+      "fit_fmax": 0.761574200212114,
+      "parameters": [
+        6,
+        2,
+        0
+      ],
+      "weight": 0.25,
+      "routing": "weak_sequence"
+    },
+    "shuffled": {
+      "fit_fmax": 0.762939233689453,
+      "parameters": [
+        3,
+        0,
+        10
+      ],
+      "weight": 0.25,
+      "routing": "weak_sequence"
+    },
+    "masked": {
+      "fit_fmax": 0.7610882730079851,
+      "parameters": [
+        1,
+        2,
+        0
+      ],
+      "weight": 0.25,
+      "routing": "weak_sequence"
+    },
+    "mask_shuffle": {
+      "fit_fmax": 0.7600193075780237,
+      "parameters": [
+        1,
+        2,
+        0
+      ],
+      "weight": 0.25,
+      "routing": "constant"
+    },
+    "threshold_indices": {
+      "diamond_bits": 51,
+      "diamond_tuned": 57,
+      "esm_mlp": 46,
+      "esm_knn": 43,
+      "sequence": 41,
+      "off": 40,
+      "real": 41,
+      "shuffled": 41,
+      "masked": 38,
+      "mask_shuffle": 41,
+      "real_matched_off": 41,
+      "real_matched_shuffled": 40,
+      "3di_only": 43,
+      "masked_matched_unmasked": 38,
+      "masked_matched_shuffled": 38
+    }
+  },
+  "test": {
+    "all": {
+      "n": 1098,
+      "metrics": {
+        "off": {
+          "fixed_f1": 0.7580161339428597,
+          "fmax": 0.7600686095929637,
+          "average_precision_micro": 0.7541896950718798,
+          "called_fraction": 1.0
+        },
+        "real": {
+          "fixed_f1": 0.7565864821000181,
+          "fmax": 0.7607116043222095,
+          "average_precision_micro": 0.7536521212821846,
+          "called_fraction": 1.0
+        },
+        "shuffled": {
+          "fixed_f1": 0.7563303397325969,
+          "fmax": 0.7610758914725123,
+          "average_precision_micro": 0.7557293285994877,
+          "called_fraction": 1.0
+        },
+        "masked": {
+          "fixed_f1": 0.7584387661979755,
+          "fmax": 0.7600449807404722,
+          "average_precision_micro": 0.7547141965749646,
+          "called_fraction": 1.0
+        },
+        "mask_shuffle": {
+          "fixed_f1": 0.7524725361980382,
+          "fmax": 0.758640429745785,
+          "average_precision_micro": 0.7521133079672196,
+          "called_fraction": 1.0
+        },
+        "real_matched_off": {
+          "fixed_f1": 0.7563578741556731,
+          "fmax": 0.7606880122512772,
+          "average_precision_micro": 0.7532078665119393,
+          "called_fraction": 1.0
+        },
+        "real_matched_shuffled": {
+          "fixed_f1": 0.7584286712378806,
+          "fmax": 0.7611730454561978,
+          "average_precision_micro": 0.7553838743238664,
+          "called_fraction": 1.0
+        },
+        "3di_only": {
+          "fixed_f1": 0.609609046809129,
+          "fmax": 0.6107585594608345,
+          "average_precision_micro": 0.4767561499919263,
+          "called_fraction": 0.714936247723133
+        },
+        "masked_matched_unmasked": {
+          "fixed_f1": 0.7585000921506395,
+          "fmax": 0.7599094517562427,
+          "average_precision_micro": 0.7555685160151442,
+          "called_fraction": 1.0
+        },
+        "masked_matched_shuffled": {
+          "fixed_f1": 0.7571367917190422,
+          "fmax": 0.7585619928630724,
+          "average_precision_micro": 0.7533847746733593,
+          "called_fraction": 1.0
+        },
+        "sequence": {
+          "fixed_f1": 0.7528995035272147,
+          "fmax": 0.7597957993197886,
+          "average_precision_micro": 0.7547353389640611,
+          "called_fraction": 1.0
+        },
+        "diamond_tuned": {
+          "fixed_f1": 0.626318502115362,
+          "fmax": 0.6286613995234792,
+          "average_precision_micro": 0.4546965520063392,
+          "called_fraction": 0.6857923497267759
+        },
+        "esm_mlp": {
+          "fixed_f1": 0.7399937201322349,
+          "fmax": 0.7419527228993635,
+          "average_precision_micro": 0.741289747589625,
+          "called_fraction": 1.0
+        },
+        "esm_knn": {
+          "fixed_f1": 0.7122959916172558,
+          "fmax": 0.7177674943788176,
+          "average_precision_micro": 0.7150757935805013,
+          "called_fraction": 1.0
+        },
+        "diamond_bits": {
+          "fixed_f1": 0.6213610090594145,
+          "fmax": 0.6249899708033988,
+          "average_precision_micro": 0.4588545305792777,
+          "called_fraction": 0.6857923497267759
+        }
+      },
+      "paired_fixed_f1": {
+        "real_minus_sequence": {
+          "n": 1098,
+          "mean_delta": 0.0036869785728034232,
+          "seed_deltas": [
+            0.0036869785728034232
+          ],
+          "test_protein_bootstrap_95": [
+            0.00015778016243680473,
+            0.006937883882596661
+          ]
+        },
+        "off_minus_sequence": {
+          "n": 1098,
+          "mean_delta": 0.005116630415645029,
+          "seed_deltas": [
+            0.005116630415645029
+          ],
+          "test_protein_bootstrap_95": [
+            0.0018719088487204217,
+            0.008111003604128756
+          ]
+        },
+        "real_minus_off": {
+          "n": 1098,
+          "mean_delta": -0.001429651842841606,
+          "seed_deltas": [
+            -0.001429651842841606
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0031346110985478516,
+            0.0003586820657381216
+          ]
+        },
+        "real_minus_shuffled": {
+          "n": 1098,
+          "mean_delta": 0.0002561423674212193,
+          "seed_deltas": [
+            0.0002561423674212193
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0016254395946264876,
+            0.002039614273540907
+          ]
+        },
+        "real_minus_real_matched_off": {
+          "n": 1098,
+          "mean_delta": 0.00022860794434498288,
+          "seed_deltas": [
+            0.00022860794434498288
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0002647793438376872,
+            0.0007955344489071951
+          ]
+        },
+        "real_minus_real_matched_shuffled": {
+          "n": 1098,
+          "mean_delta": -0.0018421891378624933,
+          "seed_deltas": [
+            -0.0018421891378624933
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0036234812403854594,
+            -0.00014519027736393535
+          ]
+        },
+        "masked_minus_sequence": {
+          "n": 1098,
+          "mean_delta": 0.0055392626707607695,
+          "seed_deltas": [
+            0.0055392626707607695
+          ],
+          "test_protein_bootstrap_95": [
+            0.0020845737013956535,
+            0.009018833989065294
+          ]
+        },
+        "masked_minus_off": {
+          "n": 1098,
+          "mean_delta": 0.0004226322551157402,
+          "seed_deltas": [
+            0.0004226322551157402
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0018358336379386887,
+            0.0028120741414097115
+          ]
+        },
+        "masked_minus_mask_shuffle": {
+          "n": 1098,
+          "mean_delta": 0.005966229999937234,
+          "seed_deltas": [
+            0.005966229999937234
+          ],
+          "test_protein_bootstrap_95": [
+            0.002496383592530105,
+            0.009321016275582785
+          ]
+        },
+        "masked_minus_masked_matched_unmasked": {
+          "n": 1098,
+          "mean_delta": -6.132595266405971e-05,
+          "seed_deltas": [
+            -6.132595266405971e-05
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0011653604405113065,
+            0.0010672334485766015
+          ]
+        },
+        "masked_minus_masked_matched_shuffled": {
+          "n": 1098,
+          "mean_delta": 0.00130197447893321,
+          "seed_deltas": [
+            0.00130197447893321
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0011908374971216218,
+            0.0037911768879406835
+          ]
+        }
+      }
+    },
+    "no_close_sequence": {
+      "n": 677,
+      "metrics": {
+        "off": {
+          "fixed_f1": 0.7270928929128198,
+          "fmax": 0.736004565286782,
+          "average_precision_micro": 0.7253178345481013,
+          "called_fraction": 1.0
+        },
+        "real": {
+          "fixed_f1": 0.7244233677531421,
+          "fmax": 0.7356666750570005,
+          "average_precision_micro": 0.7244950210383578,
+          "called_fraction": 1.0
+        },
+        "shuffled": {
+          "fixed_f1": 0.723751207654082,
+          "fmax": 0.73669701203151,
+          "average_precision_micro": 0.7289735256381586,
+          "called_fraction": 1.0
+        },
+        "masked": {
+          "fixed_f1": 0.7291617524531001,
+          "fmax": 0.7363150134317077,
+          "average_precision_micro": 0.7265805406954295,
+          "called_fraction": 1.0
+        },
+        "mask_shuffle": {
+          "fixed_f1": 0.7197172576961284,
+          "fmax": 0.7346046170121563,
+          "average_precision_micro": 0.7255954827576061,
+          "called_fraction": 1.0
+        },
+        "real_matched_off": {
+          "fixed_f1": 0.724184677414825,
+          "fmax": 0.7360003363204715,
+          "average_precision_micro": 0.723579624900808,
+          "called_fraction": 1.0
+        },
+        "real_matched_shuffled": {
+          "fixed_f1": 0.7282132856294168,
+          "fmax": 0.7365777425202203,
+          "average_precision_micro": 0.7284796582287323,
+          "called_fraction": 1.0
+        },
+        "3di_only": {
+          "fixed_f1": 0.5392035404330776,
+          "fmax": 0.5418039812924466,
+          "average_precision_micro": 0.3996481317641072,
+          "called_fraction": 0.638109305760709
+        },
+        "masked_matched_unmasked": {
+          "fixed_f1": 0.7301590299780328,
+          "fmax": 0.737116704299122,
+          "average_precision_micro": 0.7281232969598115,
+          "called_fraction": 1.0
+        },
+        "masked_matched_shuffled": {
+          "fixed_f1": 0.7273286479090944,
+          "fmax": 0.7347001669176063,
+          "average_precision_micro": 0.7257794856379028,
+          "called_fraction": 1.0
+        },
+        "sequence": {
+          "fixed_f1": 0.7200729383773408,
+          "fmax": 0.7351112855147333,
+          "average_precision_micro": 0.7271915412791468,
+          "called_fraction": 1.0
+        },
+        "diamond_tuned": {
+          "fixed_f1": 0.4813918725227991,
+          "fmax": 0.4867233525810348,
+          "average_precision_micro": 0.3168089364847064,
+          "called_fraction": 0.49039881831610044
+        },
+        "esm_mlp": {
+          "fixed_f1": 0.7316949366818013,
+          "fmax": 0.7345426720517672,
+          "average_precision_micro": 0.7383269187370356,
+          "called_fraction": 1.0
+        },
+        "esm_knn": {
+          "fixed_f1": 0.697916794270875,
+          "fmax": 0.7069586928672987,
+          "average_precision_micro": 0.7084716178817037,
+          "called_fraction": 1.0
+        },
+        "diamond_bits": {
+          "fixed_f1": 0.4830716405886719,
+          "fmax": 0.48787350766977217,
+          "average_precision_micro": 0.3188539684953672,
+          "called_fraction": 0.49039881831610044
+        }
+      },
+      "paired_fixed_f1": {
+        "real_minus_sequence": {
+          "n": 677,
+          "mean_delta": 0.0043504293758013235,
+          "seed_deltas": [
+            0.0043504293758013235
+          ],
+          "test_protein_bootstrap_95": [
+            -0.00042035421536706636,
+            0.009035561958123989
+          ]
+        },
+        "off_minus_sequence": {
+          "n": 677,
+          "mean_delta": 0.007019954535478989,
+          "seed_deltas": [
+            0.007019954535478989
+          ],
+          "test_protein_bootstrap_95": [
+            0.0022678912027784383,
+            0.011742626684305073
+          ]
+        },
+        "real_minus_off": {
+          "n": 677,
+          "mean_delta": -0.002669525159677666,
+          "seed_deltas": [
+            -0.002669525159677666
+          ],
+          "test_protein_bootstrap_95": [
+            -0.005021033578844908,
+            -0.0004395057658010766
+          ]
+        },
+        "real_minus_shuffled": {
+          "n": 677,
+          "mean_delta": 0.0006721600990601262,
+          "seed_deltas": [
+            0.0006721600990601262
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0023831330184388207,
+            0.0033719594806390983
+          ]
+        },
+        "real_minus_real_matched_off": {
+          "n": 677,
+          "mean_delta": 0.00023869033831713793,
+          "seed_deltas": [
+            0.00023869033831713793
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0004675257167879809,
+            0.0009392479850004934
+          ]
+        },
+        "real_minus_real_matched_shuffled": {
+          "n": 677,
+          "mean_delta": -0.0037899178762746955,
+          "seed_deltas": [
+            -0.0037899178762746955
+          ],
+          "test_protein_bootstrap_95": [
+            -0.006297836174036167,
+            -0.0010982666630811717
+          ]
+        },
+        "masked_minus_sequence": {
+          "n": 677,
+          "mean_delta": 0.009088814075759344,
+          "seed_deltas": [
+            0.009088814075759344
+          ],
+          "test_protein_bootstrap_95": [
+            0.0043889322395470835,
+            0.014230533414937022
+          ]
+        },
+        "masked_minus_off": {
+          "n": 677,
+          "mean_delta": 0.0020688595402803545,
+          "seed_deltas": [
+            0.0020688595402803545
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0014377019838744812,
+            0.005799780159925543
+          ]
+        },
+        "masked_minus_mask_shuffle": {
+          "n": 677,
+          "mean_delta": 0.009444494756971733,
+          "seed_deltas": [
+            0.009444494756971733
+          ],
+          "test_protein_bootstrap_95": [
+            0.004430713175635992,
+            0.014460858942257692
+          ]
+        },
+        "masked_minus_masked_matched_unmasked": {
+          "n": 677,
+          "mean_delta": -0.000997277524932727,
+          "seed_deltas": [
+            -0.000997277524932727
+          ],
+          "test_protein_bootstrap_95": [
+            -0.00275978718921166,
+            0.0006993609590346255
+          ]
+        },
+        "masked_minus_masked_matched_shuffled": {
+          "n": 677,
+          "mean_delta": 0.0018331045440057592,
+          "seed_deltas": [
+            0.0018331045440057592
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0017915832937094895,
+            0.005458597395180514
+          ]
+        }
+      }
+    },
+    "no_diamond_hit": {
+      "n": 345,
+      "metrics": {
+        "off": {
+          "fixed_f1": 0.6807384537281388,
+          "fmax": 0.72496620198514,
+          "average_precision_micro": 0.7203995095389968,
+          "called_fraction": 1.0
+        },
+        "real": {
+          "fixed_f1": 0.6732461251397259,
+          "fmax": 0.7240624705848193,
+          "average_precision_micro": 0.7196386786219913,
+          "called_fraction": 1.0
+        },
+        "shuffled": {
+          "fixed_f1": 0.6714812826076546,
+          "fmax": 0.7242075779568865,
+          "average_precision_micro": 0.723756827018299,
+          "called_fraction": 1.0
+        },
+        "masked": {
+          "fixed_f1": 0.6863063544632194,
+          "fmax": 0.7222284136589135,
+          "average_precision_micro": 0.7183448253662829,
+          "called_fraction": 1.0
+        },
+        "mask_shuffle": {
+          "fixed_f1": 0.6642388713606189,
+          "fmax": 0.7212109407824475,
+          "average_precision_micro": 0.7182509245020116,
+          "called_fraction": 1.0
+        },
+        "real_matched_off": {
+          "fixed_f1": 0.673475292977533,
+          "fmax": 0.7237844541401404,
+          "average_precision_micro": 0.7188359409971508,
+          "called_fraction": 1.0
+        },
+        "real_matched_shuffled": {
+          "fixed_f1": 0.6805625325016346,
+          "fmax": 0.7247156170684003,
+          "average_precision_micro": 0.723345179400972,
+          "called_fraction": 1.0
+        },
+        "3di_only": {
+          "fixed_f1": 0.407312761716251,
+          "fmax": 0.41317046876339053,
+          "average_precision_micro": 0.297127574037797,
+          "called_fraction": 0.4811594202898551
+        },
+        "masked_matched_unmasked": {
+          "fixed_f1": 0.6874638863658874,
+          "fmax": 0.7235375116507851,
+          "average_precision_micro": 0.7206213761327744,
+          "called_fraction": 1.0
+        },
+        "masked_matched_shuffled": {
+          "fixed_f1": 0.6848908423517744,
+          "fmax": 0.7212109407824475,
+          "average_precision_micro": 0.7182509245020116,
+          "called_fraction": 1.0
+        },
+        "sequence": {
+          "fixed_f1": 0.66285285193797,
+          "fmax": 0.7237659543210616,
+          "average_precision_micro": 0.7265017632076041,
+          "called_fraction": 1.0
+        },
+        "diamond_tuned": {
+          "fixed_f1": 0.0,
+          "fmax": 0.0,
+          "average_precision_micro": 0.0677074214570567,
+          "called_fraction": 0.0
+        },
+        "esm_mlp": {
+          "fixed_f1": 0.7217380415578778,
+          "fmax": 0.7237659543210616,
+          "average_precision_micro": 0.7265017632076041,
+          "called_fraction": 1.0
+        },
+        "esm_knn": {
+          "fixed_f1": 0.6866187162826228,
+          "fmax": 0.6945089632727031,
+          "average_precision_micro": 0.696511862064753,
+          "called_fraction": 1.0
+        },
+        "diamond_bits": {
+          "fixed_f1": 0.0,
+          "fmax": 0.0,
+          "average_precision_micro": 0.0677074214570567,
+          "called_fraction": 0.0
+        }
+      },
+      "paired_fixed_f1": {
+        "real_minus_sequence": {
+          "n": 345,
+          "mean_delta": 0.010393273201755981,
+          "seed_deltas": [
+            0.010393273201755981
+          ],
+          "test_protein_bootstrap_95": [
+            0.0023123826076398347,
+            0.018721682787584914
+          ]
+        },
+        "off_minus_sequence": {
+          "n": 345,
+          "mean_delta": 0.017885601790168848,
+          "seed_deltas": [
+            0.017885601790168848
+          ],
+          "test_protein_bootstrap_95": [
+            0.009971217011486604,
+            0.025630531605439186
+          ]
+        },
+        "real_minus_off": {
+          "n": 345,
+          "mean_delta": -0.0074923285884128665,
+          "seed_deltas": [
+            -0.0074923285884128665
+          ],
+          "test_protein_bootstrap_95": [
+            -0.011240400200678981,
+            -0.003720484110530062
+          ]
+        },
+        "real_minus_shuffled": {
+          "n": 345,
+          "mean_delta": 0.0017648425320713201,
+          "seed_deltas": [
+            0.0017648425320713201
+          ],
+          "test_protein_bootstrap_95": [
+            -0.002605074477212535,
+            0.006443707173571957
+          ]
+        },
+        "real_minus_real_matched_off": {
+          "n": 345,
+          "mean_delta": -0.00022916783780702055,
+          "seed_deltas": [
+            -0.00022916783780702055
+          ],
+          "test_protein_bootstrap_95": [
+            -0.0012426383503315735,
+            0.0008441243665655155
+          ]
+        },
+        "real_minus_real_matched_shuffled": {
+          "n": 345,
+          "mean_delta": -0.007316407361908639,
+          "seed_deltas": [
+            -0.007316407361908639
+          ],
+          "test_protein_bootstrap_95": [
+            -0.011698493547933054,
+            -0.002516298472805976
+          ]
+        },
+        "masked_minus_sequence": {
+          "n": 345,
+          "mean_delta": 0.02345350252524947,
+          "seed_deltas": [
+            0.02345350252524947
+          ],
+          "test_protein_bootstrap_95": [
+            0.015483787600012192,
+            0.03086108770629554
+          ]
+        },
+        "masked_minus_off": {
+          "n": 345,
+          "mean_delta": 0.005567900735080622,
+          "seed_deltas": [
+            0.005567900735080622
+          ],
+          "test_protein_bootstrap_95": [
+            0.0002651931154624449,
+            0.01100171050006851
+          ]
+        },
+        "masked_minus_mask_shuffle": {
+          "n": 345,
+          "mean_delta": 0.022067483102600538,
+          "seed_deltas": [
+            0.022067483102600538
+          ],
+          "test_protein_bootstrap_95": [
+            0.014714981204065777,
+            0.02915443104510265
+          ]
+        },
+        "masked_minus_masked_matched_unmasked": {
+          "n": 345,
+          "mean_delta": -0.0011575319026679853,
+          "seed_deltas": [
+            -0.0011575319026679853
+          ],
+          "test_protein_bootstrap_95": [
+            -0.004503045303970621,
+            0.0015649049328472211
+          ]
+        },
+        "masked_minus_masked_matched_shuffled": {
+          "n": 345,
+          "mean_delta": 0.001415512111444972,
+          "seed_deltas": [
+            0.001415512111444972
+          ],
+          "test_protein_bootstrap_95": [
+            -0.004693236762358258,
+            0.006696586654218362
+          ]
+        }
+      }
+    }
+  }
+}
